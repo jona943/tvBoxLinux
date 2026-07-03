@@ -1,0 +1,2 @@
+# Allwinner Tech (Mortal T1 y otros) - Reglas para ADB y MTP
+SUBSYSTEM=="usb", ATTR{idVendor}=="1f3a", MODE="0666", GROUP="plugdev"

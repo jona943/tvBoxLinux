@@ -1,0 +1,10 @@
+verbosity=1
+bootlogo=true
+console=both
+disp_mode=1920x1080p60
+overlay_prefix=sun50i-h616
+rootdev=UUID=233f1116-a689-4756-a32c-dd2faff37c02
+rootfstype=ext4
+usbstoragequirks=0x2537:0x1066:u,0x2537:0x1068:u
+fdtfile=allwinner/sun50i-h313-x96q-lpddr3.dtb
+extraargs=systemd.unit=multi-user.target
