@@ -1,38 +1,66 @@
-# Proyecto TV-Box Linux
+# Proyecto TV-Box Linux: Mortal T1 (Allwinner H313)
 
-Este repositorio contiene la documentación técnica, scripts y herramientas para la instalación de una distribución Linux compatible en una TV-box china.
-
-## Estructura del Repositorio
-* `ai-memory/`: Directorio que contiene las memorias de sesión para el seguimiento de la interacción.
-* `.tmp/platform-tools/`: Copia local de Android Platform Tools (contiene `adb`).
-* `README.md`: Documentación técnica principal y estado actual del proyecto (este archivo).
+Este repositorio contiene la documentación técnica, scripts de automatización y archivos compilados para la instalación y configuración de la distribución Armbian Linux en la TV Box china **Mortal T1**.
 
 ---
 
-## Sección 1: Identificación del Hardware (En Proceso)
+## 1. Especificaciones del Hardware
+*   **Modelo:** Mortal T1 (X96Q Clone)
+*   **SoC:** Allwinner H313 Quad-Core (Cortex-A53)
+*   **Memoria RAM:** 2 GB LPDDR3 (1.39 GB utilizables reales)
+*   **Almacenamiento:** 16 GB eMMC interna + MicroSD
+*   **Chip de Red (Wi-Fi/Bluetooth):** **AICSemi AIC8800** conectado mediante el bus **SDIO** (sin puerto Ethernet físico).
 
-### Estado Actual del Dispositivo
-* **Marca/Modelo Comercial:** Mortal T1 (Motrtal T1)
-* **Especificaciones indicadas por carcasa:** 2GB RAM / 16GB ROM / MAC `00:1A:79:30:A6:E8`
-* **SoC Detectado:** Allwinner (Vendor ID `1f3a`, Product ID `1007`)
-* **Modelo estimado de SoC:** **Allwinner H313** o **Allwinner H616**
+---
 
-### Diagnóstico de Conectividad USB/ADB
-Al conectar la TV-box al puerto USB del host, el comando `lsusb` la detecta como:
-`Bus 002 Device 013: ID 1f3a:1007 Allwinner Technology Mortal T1`
+## 2. Estructura del Repositorio
+*   `boot-troubleshooting/`: Documentación sobre cómo resolver la pantalla negra al iniciar y configurar el árbol de dispositivos (DTB).
+*   `wifi-troubleshooting/`: Documentación detallada del proceso técnico para compilar y cargar el driver inalámbrico offline.
+    *   `scripts/`: Contiene los scripts de automatización de compilación e instalación.
+        *   [host_build.sh](file:///home/dev-jonathan/Escritorio/entorno-prueba/tvBoxLinux/wifi-troubleshooting/scripts/host_build.sh): Script ejecutable en el PC Host para configurar cabeceras y compilar drivers cruzados.
+        *   [tvbox_install.sh](file:///home/dev-jonathan/Escritorio/entorno-prueba/tvBoxLinux/wifi-troubleshooting/scripts/tvbox_install.sh): Script ejecutable en la TV Box para copiar firmwares e instalar módulos.
+    *   `offline-files/`: Directorio autogestionado con los archivos de instalación offline listos para ser pasados a la MicroSD.
+*   `downloads/` *(Ignorado en Git)*: Descargas locales de cabeceras de kernel y repositorios clonados.
 
-La interfaz USB expone dos descriptores de clase específica del vendedor, uno de ellos corresponde a la interfaz ADB (`bInterfaceClass 255`, `bInterfaceSubClass 66`, `bInterfaceProtocol 1`).
+---
 
-#### Intentos de Conexión Realizados
-1. **Herramienta ADB Local:** Descargada en `.tmp/platform-tools/adb`.
-2. **Configuración de Vendor ID:** Se agregó `0x1f3a` a `~/.android/adb_usb.ini`.
-3. **Resultado:** `./adb devices` aún no lista el dispositivo.
+## 3. Bitácora de Desafíos y Soluciones
 
-### Pendientes para la Siguiente Sesión
-1. **Activar Depuración USB:** Confirmar si la depuración USB está activa en la TV-box desde la interfaz gráfica de Android TV.
-2. **Permisos de udev en el Host:** Crear una regla de udev en `/etc/udev/rules.d/51-android.rules` si se requiere acceso de lectura/escritura sin root para el Vendor ID `1f3a`.
-3. **Extracción de Datos Técnicos:**
-   Una vez lograda la conexión ADB, extraer:
-   * CPU Info: `adb shell cat /proc/cpuinfo`
-   * Particiones de Almacenamiento: `adb shell cat /proc/partitions`
-   * Módulo de Wi-Fi y Bluetooth: `adb shell dmesg | grep -i wlan`
+### Desafío 1: Pantalla Negra en el Arranque (LightDM Crash)
+*   **Síntoma:** Al arrancar Armbian en la TV Box, la salida de video HDMI se quedaba en negro.
+*   **Solución:** Editamos `/boot/armbianEnv.txt` en la MicroSD para:
+    1.  Forzar el DTB de hardware correcto: `fdtfile=allwinner/sun50i-h313-x96q-lpddr3.dtb`.
+    2.  Forzar el arranque en modo consola pura (TTY) desactivando temporalmente la interfaz gráfica: `extraargs=systemd.unit=multi-user.target`.
+
+### Desafío 2: Kernel Panic local por falta de memoria e I/O en la TV Box
+*   **Síntoma:** Al intentar desempaquetar las cabeceras del kernel (`linux-headers`) en la TV Box, el sistema arrojaba un `Kernel Panic: Oops: 0000000096000004` (Fallo en el planificador EEVDF al intentar matar la tarea idle).
+*   **Solución:** Migramos a un entorno de **compilación cruzada en el PC Host** (Ubuntu 24.04 Noble) usando el compilador cruzado `aarch64-linux-gnu-gcc`, extrayendo las cabeceras localmente en el PC y evitando sobrecargar la RAM/CPU de la TV Box.
+
+### Desafío 3: Conflicto de Versión del Kernel (`Exec format error`)
+*   **Síntoma:** Al intentar cargar el primer driver compilado cruzado en la TV Box, devolvía `Exec format error` debido a que el *vermagic* del módulo no coincidía con el del kernel de la TV Box.
+*   **Solución:** Parcheamos el archivo `include/generated/utsrelease.h` de las cabeceras de compilación en el PC Host para forzar la cadena exacta de la versión de kernel corriendo en la TV Box (`"6.6.44-current-sunxi64"` en lugar de `"6.6.44"`).
+
+### Desafío 4: Error de Bus en Drivers de Wi-Fi (`No such device` / `aic_patch_table_alloc fail`)
+*   **Síntoma:** Los drivers compilados originalmente bajo el bus USB se cargaban pero no detectaban ningún hardware, y la TV Box requiere drivers SDIO.
+*   **Solución:** 
+    1.  Migramos la base de código al repositorio del driver SDIO de Radxa.
+    2.  Compilamos los tres módulos esenciales para SDIO: `aic8800_bsp.ko` (módulo de placa), `aic8800_fdrv.ko` (tarjeta de red) y `aic8800_btlpm.ko` (bluetooth).
+    3.  Cambiamos la ruta del firmware dentro de `aic8800_bsp/Makefile` para que apunte al directorio estándar de Linux `/lib/firmware/aic8800D80` en lugar de la ruta de Android `/vendor/etc/firmware`.
+
+---
+
+## 4. Repositorios Consultados y Créditos
+Agradecemos a los desarrolladores y mantenedores de los siguientes repositorios de software libre, los cuales sirvieron de base técnica, código y descarga de parches para hacer posible este proyecto:
+
+*   **Radxa Kernel Modules (Mantenedores de Radxa):**
+    *   *Repositorio:* [radxa-pkg/aic8800](https://github.com/radxa-pkg/aic8800)
+    *   *Uso:* Código base del controlador SDIO compatible con el kernel 6.6 para los módulos `aic8800_bsp`, `aic8800_fdrv` y `aic8800_btlpm`.
+*   **Shenmintao aic8800d80:**
+    *   *Repositorio:* [shenmintao/aic8800d80](https://github.com/shenmintao/aic8800d80)
+    *   *Uso:* Consulta inicial de archivos de firmware y drivers USB del chip.
+*   **Linux Kernel Source (Linus Torvalds / ARM64 Mantenedores):**
+    *   *Repositorio:* [torvalds/linux](https://github.com/torvalds/linux)
+    *   *Uso:* Extracción de archivos de scripts de arquitectura ARM64 faltantes en el paquete de cabeceras de Armbian (`gen-cpucaps.awk`, `cpucaps`, `gen-sysreg.awk`, `sysreg`).
+*   **Repositorio Oficial de Armbian:**
+    *   *Servidor:* [Armbian Pool](https://apt.armbian.com)
+    *   *Uso:* Descarga del paquete oficial de cabeceras de desarrollo del kernel (`linux-headers-current-sunxi64_24.8.4_arm64.deb`).
