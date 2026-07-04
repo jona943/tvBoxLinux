@@ -20,6 +20,8 @@ Este repositorio contiene la documentación técnica, scripts de automatización
         *   [host_build.sh](file:///home/dev-jonathan/Escritorio/entorno-prueba/tvBoxLinux/wifi-troubleshooting/scripts/host_build.sh): Script ejecutable en el PC Host para configurar cabeceras y compilar drivers cruzados.
         *   [tvbox_install.sh](file:///home/dev-jonathan/Escritorio/entorno-prueba/tvBoxLinux/wifi-troubleshooting/scripts/tvbox_install.sh): Script ejecutable en la TV Box para copiar firmwares e instalar módulos.
     *   `offline-files/`: Directorio autogestionado con los archivos de instalación offline listos para ser pasados a la MicroSD.
+*   `emmc-installation/`: Documentación y script parcheado para la instalación a eMMC de forma síncrona y estable.
+    *   [armbian-install.patched](file:///home/dev-jonathan/Escritorio/entorno-prueba/tvBoxLinux/emmc-installation/armbian-install.patched): Copia del instalador de Armbian optimizado y documentado.
 *   `downloads/` *(Ignorado en Git)*: Descargas locales de cabeceras de kernel y repositorios clonados.
 
 ---
@@ -46,6 +48,13 @@ Este repositorio contiene la documentación técnica, scripts de automatización
     1.  Migramos la base de código al repositorio del driver SDIO de Radxa.
     2.  Compilamos los tres módulos esenciales para SDIO: `aic8800_bsp.ko` (módulo de placa), `aic8800_fdrv.ko` (tarjeta de red) y `aic8800_btlpm.ko` (bluetooth).
     3.  Cambiamos la ruta del firmware dentro de `aic8800_bsp/Makefile` para que apunte al directorio estándar de Linux `/lib/firmware/aic8800D80` en lugar de la ruta de Android `/vendor/etc/firmware`.
+
+### Desafío 5: Congelamiento (Kernel Panic) al intentar instalar en memoria eMMC interna
+*   **Síntoma:** Durante `armbian-install`, el sistema colapsaba por completo al llegar a "Counting files ... few seconds" o al 3% de copiado.
+*   **Solución:** Parcheamos el script `armbian-install` en la MicroSD para:
+    1.  Evitar el `rsync` de conteo síncrono que realizaba una copia completa oculta al inicio; se sustituye por `find / -xdev | wc -l` (conteo de metadatos instantáneo).
+    2.  Forzar escrituras síncronas al montar la eMMC (`-o sync`) eliminando picos eléctricos/térmicos por vaciado masivo de caché (*dirty page flushing*).
+    3.  Limitar la tasa de transferencia de datos a un nivel seguro y constante de 4 MB/s (`--bwlimit=4000`).
 
 ---
 
