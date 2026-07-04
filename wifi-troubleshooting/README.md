@@ -1,6 +1,6 @@
 # Diagnóstico y Plan de Solución: Interfaz Wi-Fi Inexistente (AIC8800) en Armbian
 
-Este documento registra la falta de conectividad inalámbrica en la TV Box Mortal T1 (Allwinner H313) después de iniciar con éxito en la consola de Armbian, detallando las salidas obtenidas, la causa raíz y la metodología de solución fuera de línea (offline).
+Este documento registra la falta de conectividad inalámbrica en la TV Box Mortal T1 (Allwinner H313) después de iniciar con éxito en la consola de Armbian, detallando las salidas obtenidas, la causa raíz, la investigación de los Kernel Panics y la metodología de solución por compilación cruzada (cross-compilation) offline.
 
 ---
 
@@ -13,13 +13,13 @@ Al inspeccionar el estado de los dispositivos de red con el comando:
 ```bash
 nmcli device status
 ```
-La consola devolvió una salida similar a la siguiente:
+La consola devolvió la siguiente salida:
 ```text
 DEVICE             TYPE      STATE         CONNECTION
 end0               ethernet  unavailable   --
 lo                 loopback  unmanaged     --
 ```
-**Observación Crítica:** La interfaz inalámbrica típica **`wlan0`** no figura en el listado de dispositivos de red.
+**Observación Crítica:** La interfaz inalámbrica **`wlan0`** no figura en el listado de dispositivos de red.
 
 ---
 
@@ -28,58 +28,81 @@ lo                 loopback  unmanaged     --
 1. **Hardware Inalámbrico Dedicado:** De acuerdo con la información obtenida de la memoria de la sesión anterior en Android, el dispositivo posee un chip Wi-Fi integrado **AIC8800** (que utiliza los módulos de kernel `aic8800_fdrv`, `aic8800_bsp` y `aic8800_btlpm`).
 2. **Falta de Soporte Nativo en Linux:** El chip AIC8800 no está soportado nativamente en la rama principal (mainline) del kernel de Linux, por lo que requiere controladores compilados fuera del árbol (out-of-tree drivers).
 3. **Ausencia de Drivers y Cabeceras en la Imagen:** La imagen de Armbian no incluye el driver compilado ni los archivos de firmware del fabricante para el chip AIC8800.
-4. **Ausencia de Cabeceras de Desarrollo:** Al ejecutar:
+4. **Ausencia de Cabeceras de Desarrollo:** Al ejecutar `ls -l /usr/src` la consola devolvió `total 0`, confirmando que no existen las cabeceras del kernel (`linux-headers`) instaladas, lo que impide compilar cualquier driver desde el código fuente directamente en la TV Box.
+
+---
+
+## 3. La Investigación: Inestabilidad y Kernel Panics durante la Instalación Local
+
+Al intentar instalar las cabeceras del kernel (`linux-headers-current-sunxi64_24.8.4_arm64.deb`) directamente en la TV Box usando `dpkg -i`, el sistema se congelaba repetidamente a los pocos minutos, mostrando un **Kernel Panic** en pantalla:
+
+```text
+Internal error: Oops: 0000000096000004 [#4] SMP
+Hardware name: X96Q TV-Box LPDDR3 (DT) y 6.6.44-current-sunxi64
+...
+Call trace:
+ pick_next_task_fair -> _pick_eevdf -> pick_next_entity
+...
+---[ end Kernel panic - not syncing: Attempted to kill the idle task! ]---
+```
+
+### Análisis Técnico del Fallo:
+1. **Fallo de Paginación / Data Abort (Oops: 0000000096000004):** El kernel intentó acceder a una dirección de memoria RAM no válida durante una interrupción de Entrada/Salida (I/O).
+2. **Caída en el Planificador EEVDF:** La descompresión de miles de archivos pequeños de cabecera (`.h` y `.c`) saturó el bus de la MicroSD/eMMC y sobrecargó la CPU. El planificador EEVDF (encargado de decidir qué hilo de ejecución utiliza la CPU) experimentó una desreferenciación nula al intentar gestionar los hilos del proceso `dpkg`.
+3. **Muerte del Proceso Idle (PID 0):** Al corromperse las estructuras de control en memoria, el kernel intentó terminar erróneamente la tarea inactiva del sistema (`swapper/0` o *idle task*). Debido a que un sistema operativo no puede funcionar sin esta tarea raíz, el kernel entró en pánico protector (*not syncing*) para evitar la corrupción masiva de datos en el almacenamiento.
+4. **Factores de Hardware Comunes:** Estos fallos suelen estar relacionados con inestabilidades en la tabla DVFS (escalado de voltaje y frecuencia del procesador H313) configurada en el DTB, caídas de tensión en los reguladores de voltaje bajo carga extrema, o el sobrecalentamiento y mala calidad de los chips de memoria RAM LPDDR3 del TV Box.
+
+---
+
+## 4. Solución: Compilación Cruzada (Cross-Compilation) en el PC Host
+
+Para evitar por completo sobrecargar la TV Box y prevenir los Kernel Panics, cambiamos de estrategia hacia la **compilación cruzada offline** en el PC principal de desarrollo.
+
+### Investigación de Errores de Compilación Cruzada:
+
+Al intentar compilar el driver en el PC host apuntando a las cabeceras extraídas de la TV Box:
+```bash
+make -C downloads/aic8800/drivers/aic8800 \
+  KDIR=/home/dev-jonathan/Escritorio/entorno-prueba/tvBoxLinux/downloads/headers_extracted/usr/src/linux-headers-6.6.44-current-sunxi64 \
+  ARCH=arm64 \
+  CROSS_COMPILE=aarch64-linux-gnu-
+```
+Se presentó el siguiente error:
+```text
+/bin/sh: 1: scripts/basic/fixdep: not found
+```
+
+#### Causa del Conflicto de Arquitectura:
+El archivo `.deb` de cabeceras se compiló originalmente para **ARM64**. La herramienta `fixdep` (un script auxiliar de compilación) venia precompilada en formato ARM64. Como el PC host de desarrollo corre en arquitectura **AMD64 (x86_64)**, el procesador del PC no pudo ejecutar el binario, interrumpiendo el flujo.
+
+#### Solución Aplicada:
+1. **Instalación de Compilador Nativo:** Se instaló `build-essential` en el PC host para disponer del compilador nativo de C (`gcc`).
+2. **Reconstrucción de Scripts de Soporte:** Se ejecutó una recompilación local de los scripts de desarrollo del paquete de cabeceras en el PC host para que se ejecuten de forma nativa en x86_64:
    ```bash
-   ls -l /usr/src
+   make -C downloads/headers_extracted/usr/src/linux-headers-6.6.44-current-sunxi64 ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- scripts
    ```
-   La consola devolvió:
-   ```text
-   total 0
-   ```
-   Esto confirma que no existen las cabeceras del kernel (`linux-headers`) instaladas, lo que impide compilar cualquier driver desde el código fuente directamente en la TV Box.
-5. **Aislamiento Físico (Sin Ethernet):** Al tratarse de una TV Box reducida en costes, **no dispone de puerto Ethernet físico (RJ45)**, por lo que no es posible conectarla al router por cable para descargar paquetes de forma directa desde internet.
+   Esto recrea `fixdep` y `modpost` en formato ejecutable para el PC principal.
+3. **Compilación del Driver:** Con las herramientas preparadas, se ejecuta la compilación cruzada para generar los módulos `.ko` (`aic_load_fw.ko` y `aic8800_fdrv.ko`) dirigidos al kernel ARM64 de la TV Box.
 
 ---
 
-## 3. Plan de Solución Offline (Paso a Paso)
+## 5. Metodología de Instalación Final (Offline)
 
-Para solucionar esto, realizaremos un puenteo de datos utilizando el PC host para descargar las dependencias y el código del driver, los copiaremos a la tarjeta MicroSD y luego realizaremos la instalación local.
-
-### Paso 1: Descargar Cabeceras del Kernel en el PC Host
-Descargaremos el paquete oficial de cabeceras correspondiente exactamente a la versión de kernel en ejecución (`6.6.44-current-sunxi64`):
-*   **Paquete:** `linux-headers-current-sunxi64_24.8.4_arm64.deb`
-*   **Origen:** Repositorios oficiales de Armbian (`apt.armbian.com`).
-
-### Paso 2: Descargar el Código del Driver en el PC Host
-Clonaremos el repositorio del driver Wi-Fi AIC8800 de Larry Finger (`lwfinger/aic8800`) en el PC principal. Este código ya viene preparado con los archivos de firmware del chip listos para ser copiados a la carpeta `/lib/firmware/` de la TV Box.
-
-### Paso 3: Transferir Datos a la MicroSD
-Con la tarjeta MicroSD conectada al PC, copiaremos el archivo `.deb` y la carpeta del código fuente a la partición de almacenamiento de usuario (`armbi_root`) bajo el directorio del usuario personal (ej. `/home/dev-jonathan/` o `/root/`).
-
-### Paso 4: Instalar Cabeceras en la TV Box
-Una vez que arranquemos la TV Box con la MicroSD, instalaremos el paquete de cabeceras de forma local sin requerir internet:
-```bash
-sudo dpkg -i linux-headers-current-sunxi64_24.8.4_arm64...deb
-```
-
-### Paso 5: Compilar e Instalar el Driver
-Entraremos a la carpeta del driver y ejecutaremos la compilación:
-```bash
-cd aic8800
-make
-sudo make install
-```
-*   Esto compilará los módulos `aic8800_fdrv.ko` y los copiará al sistema de módulos de Linux, además de instalar los firmwares necesarios en `/lib/firmware/aic8800/`.
-
-### Paso 6: Activar la Interfaz inalámbrica
-Cargaremos el driver en memoria:
-```bash
-sudo depmod -a
-sudo modprobe aic8800_fdrv
-```
-Y confirmaremos que la interfaz `wlan0` ya está activa y lista para recibir conexiones con `nmcli`.
-
----
-
-## 4. Conclusión
-Este tipo de problemas es habitual al reciclar TV Boxes de bajo coste. Al documentar y seguir el flujo de instalación offline, garantizamos un método replicable para habilitar conectividad inalámbrica sin depender de interfaces físicas como Ethernet.
+Una vez compilados los módulos `.ko` en el PC:
+1. Copiaremos los dos archivos `.ko` y la carpeta de firmwares (`downloads/aic8800/fw/`) a la carpeta personal de tu MicroSD (`/home/dev12/`).
+2. Introduciremos la MicroSD en la TV Box e iniciaremos en modo texto.
+3. Copiaremos los firmwares y módulos manualmente a las rutas del sistema en la TV Box:
+   ```bash
+   # Copiar firmwares a su ruta del sistema
+   sudo cp -r ~/aic8800/fw/aic8800D80 /lib/firmware/
+   
+   # Copiar módulos .ko a la ruta de drivers de red de Linux
+   sudo mkdir -p /lib/modules/6.6.44-current-sunxi64/kernel/drivers/net/wireless/aic8800/
+   sudo cp ~/aic_load_fw.ko /lib/modules/6.6.44-current-sunxi64/kernel/drivers/net/wireless/aic8800/
+   sudo cp ~/aic8800_fdrv.ko /lib/modules/6.6.44-current-sunxi64/kernel/drivers/net/wireless/aic8800/
+   
+   # Registrar módulos en el sistema y levantarlos
+   sudo depmod -a
+   sudo modprobe aic8800_fdrv
+   ```
+4. Se configurará el Wi-Fi usando `nmcli`.
