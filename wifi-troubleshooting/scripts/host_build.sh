@@ -49,10 +49,10 @@ if [ ! -d "$HEADERS_EXTRACTED" ]; then
     dpkg -x "$HEADERS_DEB" "$HEADERS_EXTRACTED"
 fi
 
-# Clonar el driver si no existe
+# Clonar el driver si no existe (usamos el de Radxa para SDIO)
 if [ ! -d "$DRIVER_DIR" ]; then
-    echo "Clonando repositorio del driver aic8800..."
-    git clone https://github.com/shenmintao/aic8800d80.git "$DRIVER_DIR"
+    echo "Clonando repositorio del driver aic8800 de Radxa..."
+    git clone https://github.com/radxa-pkg/aic8800.git "$DRIVER_DIR"
 fi
 
 echo "=== 3. Descargando parches de herramientas de arquitectura ARM64 ==="
@@ -75,15 +75,25 @@ done
 
 echo "=== 4. Configurando y preparando las utilidades del kernel (modpost) ==="
 make -C "$KDIR" ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- olddefconfig
+
+# EXPLICACIÓN DEL ERROR 'Exec format error':
+# El comando 'olddefconfig' restablece el archivo 'include/generated/utsrelease.h' a la versión base "6.6.44".
+# Si compilamos el driver con esa versión, la TV Box (que corre la versión "6.6.44-current-sunxi64") rechazará
+# el módulo con un error 'Exec format error' (vermagic mismatch). 
+# Por lo tanto, forzamos la cadena de versión correcta en utsrelease.h:
+echo 'Patching utsrelease.h to match target kernel vermagic ("6.6.44-current-sunxi64")...'
+echo '#define UTS_RELEASE "6.6.44-current-sunxi64"' > "$KDIR/include/generated/utsrelease.h"
+
 make -C "$KDIR" ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu- M=scripts/mod
 
-echo "=== 5. Compilando el driver Wi-Fi aic8800 ==="
-make -C "$DRIVER_DIR/drivers/aic8800" KDIR="$KDIR" ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu-
+echo "=== 5. Compilando el driver Wi-Fi aic8800 (SDIO) ==="
+make -C "$DRIVER_DIR/src/SDIO/driver_fw/driver/aic8800" KDIR="$KDIR" ARCH=arm64 CROSS_COMPILE=aarch64-linux-gnu-
 
 echo "=== 6. Creando paquete de despliegue para la TV Box ==="
-cp "$DRIVER_DIR/drivers/aic8800/aic_load_fw/aic_load_fw.ko" "$DEPLOY_DIR/"
-cp "$DRIVER_DIR/drivers/aic8800/aic8800_fdrv/aic8800_fdrv.ko" "$DEPLOY_DIR/"
-cp -r "$DRIVER_DIR/fw/aic8800D80" "$DEPLOY_DIR/"
+cp "$DRIVER_DIR/src/SDIO/driver_fw/driver/aic8800/aic8800_bsp/aic8800_bsp.ko" "$DEPLOY_DIR/"
+cp "$DRIVER_DIR/src/SDIO/driver_fw/driver/aic8800/aic8800_btlpm/aic8800_btlpm.ko" "$DEPLOY_DIR/"
+cp "$DRIVER_DIR/src/SDIO/driver_fw/driver/aic8800/aic8800_fdrv/aic8800_fdrv.ko" "$DEPLOY_DIR/"
+cp -r "$DRIVER_DIR/src/SDIO/driver_fw/fw/aic8800D80" "$DEPLOY_DIR/"
 cp "$BASE_DIR/wifi-troubleshooting/scripts/tvbox_install.sh" "$DEPLOY_DIR/"
 
 echo "=========================================================="
