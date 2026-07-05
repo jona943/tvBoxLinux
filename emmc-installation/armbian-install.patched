@@ -112,9 +112,9 @@ create_armbian()
 	sync &&	mkdir -p "${TempDir}"/bootfs "${TempDir}"/rootfs
 	if [[ $eMMCFilesystemChoosen =~ ^(btrfs|f2fs)$ ]]; then
 		[[ -n $1 ]] && mount ${1::-1}"1" "${TempDir}"/bootfs
-		[[ -n $2 ]] && ( mount -o compress-force=zlib,sync "$2" "${TempDir}"/rootfs 2> /dev/null || mount -o sync "$2" "${TempDir}"/rootfs )
+		[[ -n $2 ]] && ( mount -o compress-force=zlib "$2" "${TempDir}"/rootfs 2> /dev/null || mount "$2" "${TempDir}"/rootfs )
 	else
-		[[ -n $2 ]] && ( mount -o compress-force=zlib,sync "$2" "${TempDir}"/rootfs 2> /dev/null || mount -o sync "$2" "${TempDir}"/rootfs )
+		[[ -n $2 ]] && ( mount -o compress-force=zlib "$2" "${TempDir}"/rootfs 2> /dev/null || mount "$2" "${TempDir}"/rootfs )
 		[[ -n $1 && $1 != "mtd" ]] && mount "$1" "${TempDir}"/bootfs
 	fi
 	rm -rf "${TempDir}"/bootfs/* "${TempDir}"/rootfs/*
@@ -181,10 +181,10 @@ create_armbian()
 	echo no >"${nsi_conn_done}"
 
 	 # Launch rsync in background
-	# PARCHE DE SEGURIDAD: Se añade '--bwlimit=4000' (4MB/s) para evitar
+	# PARCHE DE SEGURIDAD: Se añade '--bwlimit=1500' (1.5MB/s) para evitar
 	# picos de corriente y sobrecalentamiento térmico en la TV Box durante el copiado masivo.
 	{ \
-	rsync -avx --delete --bwlimit=4000 --exclude-from=$EX_LIST / "${TempDir}"/rootfs | \
+	rsync -avx --delete --bwlimit=1500 --exclude-from=$EX_LIST / "${TempDir}"/rootfs | \
 	nl | awk '{ printf "%.0f\n", 100*$1/"'"$TODO"'" }' \
 	> "${nsi_conn_progress}" ;
 	 # create empty persistent journal directory if it exists before install
@@ -231,8 +231,8 @@ create_armbian()
 
 	# run rsync again to silently catch outstanding changes between / and "${TempDir}"/rootfs/
 	dialog --title "$title" --backtitle "$backtitle" --infobox "\n               Cleaning up ... Almost done." 5 60
-	# PARCHE DE SEGURIDAD: Se añade '--bwlimit=4000' también en la sincronización final
-	rsync -avx --delete --bwlimit=4000 --exclude-from=$EX_LIST / "${TempDir}"/rootfs >/dev/null 2>&1
+	# PARCHE DE SEGURIDAD: Se añade '--bwlimit=1500' también en la sincronización final
+	rsync -avx --delete --bwlimit=1500 --exclude-from=$EX_LIST / "${TempDir}"/rootfs >/dev/null 2>&1
 
 	# mark OS as transferred
 	if ! grep -q "INSTALLED=true" /etc/armbian-image-release; then

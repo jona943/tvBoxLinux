@@ -56,6 +56,14 @@ Este repositorio contiene la documentación técnica, scripts de automatización
     2.  Forzar escrituras síncronas al montar la eMMC (`-o sync`) eliminando picos eléctricos/térmicos por vaciado masivo de caché (*dirty page flushing*).
     3.  Limitar la tasa de transferencia de datos a un nivel seguro y constante de 4 MB/s (`--bwlimit=4000`).
 
+### Desafío 6: Inestabilidad eléctrica del sistema con interfaz gráfica (Desktop)
+*   **Síntoma:** El sistema seguía presentando congelamientos al 1% del proceso de instalación en la eMMC, incluso reduciendo el governor de la CPU y limitando la velocidad de copiado. Además, el arranque inicial de la versión con escritorio MATE requería configuraciones manuales de udev y systemd unit para evitar pantallas negras en HDMI.
+*   **Solución:** Decidimos cambiar de estrategia y migrar a una **imagen Armbian CLI/Minimal (Servidor)**. Esta versión no tiene interfaz gráfica que cause pantallas negras, consume solo ~150 MB de RAM y es un 70% más ligera, lo que reduce la carga física sobre el bus de eMMC y el consumo de corriente, permitiendo una instalación 100% estable.
+
+#### Imágenes Armbian Utilizadas:
+*   **Imagen Anterior (MATE Desktop / Kernel 6.6.44):** [Armbian Unofficial MATE Desktop 24.11.0](https://github.com/sicXnull/armbian-build/releases/download/v24.8.0-trunk.425/Armbian-unofficial_24.11.0-trunk_X96q_bookworm_current_6.6.44_mate_desktop.img.xz)
+*   **Imagen Nueva (Minimal CLI / Kernel 6.12.64):** [Armbian Unofficial Minimal CLI 26.02.0](https://github.com/sicXnull/armbian-build/releases/download/v24.8.0-trunk.425/Armbian-unofficial_26.02.0-trunk_X96q-v1-3_bookworm_current_6.12.64_minimal.img.xz)
+
 ---
 
 ## 4. Repositorios Consultados y Créditos

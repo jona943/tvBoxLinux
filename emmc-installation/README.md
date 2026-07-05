@@ -34,11 +34,9 @@ Por defecto, Linux utiliza una caché de escritura en RAM para acelerar los proc
 3.  Esta transferencia masiva exige el máximo amperaje y disipación térmica tanto del controlador de memoria eMMC como de la RAM LPDDR3 y el SoC Allwinner H313.
 4.  Debido a las deficiencias de diseño eléctrico o límites térmicos de estas placas de TV Box, la caída de tensión resultante o la inestabilidad de la memoria RAM congelaban la CPU en un Kernel Panic inmediato.
 
----
-
 ## 3. Estrategia de Solución Implementada
 
-Para resolver este cuello de botella y garantizar una instalación estable, modificamos el instalador aplicando tres parches en el script `/usr/sbin/armbian-install`:
+Para resolver este cuello de botella y garantizar una instalación estable, modificamos el instalador aplicando dos parches en el script `/usr/sbin/armbian-install` y configurando límites de caché de escritura en el kernel:
 
 ### 1. Reemplazo del Conteo Pesado por Conteo Rápido de Metadatos
 Eliminamos la línea del `rsync --stats` síncrono y la reemplazamos por un conteo instantáneo que solo lee metadatos en 2 segundos sin realizar copias físicas:
@@ -46,15 +44,20 @@ Eliminamos la línea del `rsync --stats` síncrono y la reemplazamos por un cont
 TODO=$(find / -xdev | wc -l)
 ```
 
-### 2. Forzado de Escritura Síncrona (`sync`)
-Modificamos el montaje de la partición de la eMMC (líneas 115 y 117 del script) para forzar la opción de montaje **`-o sync`**:
+### 2. Limitación de Caché de Escritura en el Kernel (En lugar de `-o sync`)
+*Nota histórica: Inicialmente intentamos usar la opción de montaje `-o sync`, pero esto provocó un congelamiento/bloqueo de I/O debido a que el controlador de eMMC (`sunxi-mmc`) entra en timeout si el hardware tarda demasiado en confirmar cada bloque pequeño de escritura individual.*
+
+En su lugar, mantenemos el montaje asíncrono estándar pero limitamos el tamaño de la caché de páginas sucias (*dirty pages*) en el kernel del sistema. Esto se hace ejecutando antes de la instalación:
 ```bash
-[[ -n $2 ]] && ( mount -o compress-force=zlib,sync "$2" "${TempDir}"/rootfs 2> /dev/null || mount -o sync "$2" "${TempDir}"/rootfs )
+# Iniciar vaciado de caché en segundo plano al alcanzar 4 MB
+sudo sysctl -w vm.dirty_background_bytes=4194304
+# Bloquear procesos de escritura si hay más de 8 MB pendientes de escribir
+sudo sysctl -w vm.dirty_bytes=8388608
 ```
-Esto obliga a Linux a escribir cada archivo inmediatamente al almacenamiento en lugar de acumularlo en la memoria RAM, eliminando por completo los picos destructivos de vaciado de caché (*dirty page flushing*).
+Esto asegura que el sistema nunca acumule más de 8 MB de datos sin escribir en RAM, evitando los picos destructivos de vaciado de caché (*write storms*) pero permitiendo que el hardware maneje las escrituras de forma agrupada y eficiente.
 
 ### 3. Límite del Ancho de Banda de Copiado (`--bwlimit`)
-Agregamos el parámetro **`--bwlimit=4000`** (limitar el copiado a un máximo estable de 4 MB/s) a los comandos `rsync` reales (líneas 187 y 235). Esto mantiene el consumo eléctrico y la temperatura de los integrados dentro de límites seguros.
+Agregamos el parámetro **`--bwlimit=1500`** (limitar el copiado a un máximo estable de 1.5 MB/s) a los comandos `rsync` reales (líneas 187 y 235). Esto mantiene el consumo eléctrico y la temperatura de los integrados dentro de límites seguros.
 
 ---
 
@@ -65,14 +68,20 @@ Agregamos el parámetro **`--bwlimit=4000`** (limitar el copiado a un máximo es
     ```bash
     echo "powersave" | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor
     ```
-2.  **Copiar el Script Parcheado a la TV Box:**
+2.  **Establecer los límites de caché de escritura (dirty page limits):**
+    Configura al kernel para mantener un flujo de escritura pequeño y constante en lugar de ráfagas:
+    ```bash
+    sudo sysctl -w vm.dirty_background_bytes=4194304
+    sudo sysctl -w vm.dirty_bytes=8388608
+    ```
+3.  **Copiar el Script Parcheado a la TV Box:**
     Copia el archivo `armbian-install.patched` (incluido en este directorio) a la ruta de ejecutables de la TV Box:
     ```bash
     sudo cp armbian-install.patched /usr/sbin/armbian-install
     sudo chmod +x /usr/sbin/armbian-install
     ```
-3.  **Ejecutar la Instalación:**
-    Lanza de nuevo el instalador. La barra de progreso subirá lentamente pero sin caídas ni Kernel Panics:
+4.  **Ejecutar la Instalación:**
+    Lanza de nuevo el instalador:
     ```bash
     sudo armbian-install
     ```
