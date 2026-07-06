@@ -7,13 +7,25 @@ Este repositorio contiene la documentación técnica, scripts de automatización
 ## 1. Especificaciones del Hardware
 *   **Modelo:** Mortal T1 (X96Q Clone)
 *   **SoC:** Allwinner H313 Quad-Core (Cortex-A53)
-*   **Memoria RAM:** 2 GB LPDDR3 (1.39 GB utilizables reales)
-*   **Almacenamiento:** 16 GB eMMC interna + MicroSD
+*   **Memoria RAM:** 2 GB LPDDR3 comercial (1.44 GB virtual en Kernel, pero **~1 GB física real / Límite seguro < 500 MB**)
+*   **Almacenamiento:** 16 GB eMMC comercial (**8 GB física real** / ~7.3 GB útil)
 *   **Chip de Red (Wi-Fi/Bluetooth):** **AICSemi AIC8800** conectado mediante el bus **SDIO** (sin puerto Ethernet físico).
 
 ---
 
-## 2. Estructura del Repositorio
+## 2. Auditoría de Hardware Real (Fake Specs Decrypted)
+Tras realizar auditorías físicas y pruebas de estrés controladas, se descubrió que el firmware y U-Boot del fabricante vienen trucados de fábrica para maquillar las especificaciones. A continuación se detallan los límites reales que encontramos al someter al equipo a pruebas:
+
+| Componente | Especificación Comercial | Reportado por Kernel / OS | Hardware Físico Real | Límite Seguro de Operación / Observaciones |
+| :--- | :---: | :---: | :---: | :--- |
+| **Procesador (CPU)** | 4 Cores 1.5 GHz | 4 Cores 1.0 GHz | 4 Cores Cortex-A53 (H313) | **100% de uso estable** (máx. 62.3°C en pruebas de estrés). La CPU y su disipación térmica son excelentes. |
+| **Memoria RAM** | 2 GB | 1.44 GB | **1 GB (o 768 MB)** | **Menos de 500 MB** de uso total. El sistema colapsa de forma instantánea al superar los ~600 MB (se congela el SoC con ruido visual en pantalla) debido a direccionamiento de memoria física inexistente o caída de tensión en el carril `VDD_DRAM` por escritura masiva. |
+| **eMMC (Disco)** | 16 GB | 7.3 GB | **8 GB** | **Flasheo secuencial a bajo nivel (2MB/s)** con pausas de sincronización física (`os.fdatasync`) para evitar picos de corriente. |
+| **GPU (Video)** | Mali-G31 | Compartida | Mali-G31 MP2 (Shared) | **Modo Consola (sin interfaz gráfica)** para liberar memoria RAM y evitar congelamientos. |
+
+---
+
+## 3. Estructura del Repositorio
 *   `boot-troubleshooting/`: Documentación sobre cómo resolver la pantalla negra al iniciar y configurar el árbol de dispositivos (DTB).
 *   `wifi-troubleshooting/`: Documentación detallada del proceso técnico para compilar y cargar el driver inalámbrico offline.
     *   `scripts/`: Contiene los scripts de automatización de compilación e instalación.
@@ -26,7 +38,7 @@ Este repositorio contiene la documentación técnica, scripts de automatización
 
 ---
 
-## 3. Bitácora de Desafíos y Soluciones
+## 4. Bitácora de Desafíos y Soluciones
 
 ### Desafío 1: Pantalla Negra en el Arranque (LightDM Crash)
 *   **Síntoma:** Al arrancar Armbian en la TV Box, la salida de video HDMI se quedaba en negro.
@@ -66,7 +78,7 @@ Este repositorio contiene la documentación técnica, scripts de automatización
 
 ---
 
-## 4. Repositorios Consultados y Créditos
+## 5. Repositorios Consultados y Créditos
 Agradecemos a los desarrolladores y mantenedores de los siguientes repositorios de software libre, los cuales sirvieron de base técnica, código y descarga de parches para hacer posible este proyecto:
 
 *   **Radxa Kernel Modules (Mantenedores de Radxa):**
