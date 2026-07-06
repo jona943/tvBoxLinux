@@ -1,0 +1,2087 @@
+dev12@x96q-v1-3:~$ sudo rsync -avx --delete --bwlimit=1500 --exclude-from=/tmp/exclude.txt / /mnt/emmc/
+sending incremental file list
+./
+bin -> usr/bin
+initrd.img -> boot/initrd.img-6.12.64-current-sunxi64
+initrd.img.old -> boot/initrd.img-6.12.64-current-sunxi64
+lib -> usr/lib
+sbin -> usr/sbin
+vmlinuz -> boot/vmlinuz-6.12.64-current-sunxi64
+vmlinuz.old -> boot/vmlinuz-6.12.64-current-sunxi64
+armbian/
+armbian/images/
+armbian/images/all-images.json
+boot/
+boot/.next
+boot/Image -> vmlinuz-6.12.64-current-sunxi64
+boot/System.map-6.12.64-current-sunxi64
+boot/armbianEnv.txt
+boot/boot.bmp
+boot/boot.cmd
+boot/boot.scr
+boot/config-6.12.64-current-sunxi64
+boot/dtb -> dtb-6.12.64-current-sunxi64
+boot/initrd.img-6.12.64-current-sunxi64
+boot/uInitrd -> uInitrd-6.12.64-current-sunxi64
+boot/uInitrd-6.12.64-current-sunxi64
+boot/vmlinuz-6.12.64-current-sunxi64
+boot/dtb-6.12.64-current-sunxi64/
+boot/dtb-6.12.64-current-sunxi64/allwinner/
+boot/dtb-6.12.64-current-sunxi64/allwinner/sun50i-a100-allwinner-perf1.dtb
+boot/dtb-6.12.64-current-sunxi64/allwinner/sun50i-a64-amarula-relic.dtb
+boot/dtb-6.12.64-current-sunxi64/allwinner/sun50i-a64-bananapi-m64.dtb
+boot/dtb-6.12.64-current-sunxi64/allwinner/sun50i-a64-nanopi-a64.dtb
+boot/dtb-6.12.64-current-sunxi64/allwinner/sun50i-a64-oceanic-5205-5inmfd.dtb
+boot/dtb-6.12.64-current-sunxi64/allwinner/sun50i-a64-olinuxino-1G.dtb
+boot/dtb-6.12.64-current-sunxi64/allwinner/sun50i-a64-olinuxino-1Ge16GW.dtb
+boot/dtb-6.12.64-current-sunxi64/allwinner/sun50i-a64-olinuxino-1Ge4GW.dtb
+boot/dtb-6.12.64-current-sunxi64/allwinner/sun50i-a64-olinuxino-1Gs16M.dtb
+boot/dtb-6.12.64-current-sunxi64/allwinner/sun50i-a64-olinuxino-2Ge8G.dtb
+boot/dtb-6.12.64-current-sunxi64/allwinner/sun50i-a64-olinuxino-emmc.dtb
+boot/dtb-6.12.64-current-sunxi64/allwinner/sun50i-a64-olinuxino.dtb
+boot/dtb-6.12.64-current-sunxi64/allwinner/sun50i-a64-orangepi-win.dtb
+boot/dtb-6.12.64-current-sunxi64/allwinner/sun50i-a64-pine64-lts.dtb
+boot/dtb-6.12.64-current-sunxi64/allwinner/sun50i-a64-pine64-plus.dtb
+boot/dtb-6.12.64-current-sunxi64/allwinner/sun50i-a64-pine64.dtb
+boot/dtb-6.12.64-current-sunxi64/allwinner/sun50i-a64-pinebook.dtb
+boot/dtb-6.12.64-current-sunxi64/allwinner/sun50i-a64-pinephone-1.0.dtb
+boot/dtb-6.12.64-current-sunxi64/allwinner/sun50i-a64-pinephone-1.1.dtb
+boot/dtb-6.12.64-current-sunxi64/allwinner/sun50i-a64-pinephone-1.2.dtb
+boot/dtb-6.12.64-current-sunxi64/allwinner/sun50i-a64-pinephone-1.2b.dtb
+boot/dtb-6.12.64-current-sunxi64/allwinner/sun50i-a64-pinetab-early-adopter.dtb
+boot/dtb-6.12.64-current-sunxi64/allwinner/sun50i-a64-pinetab.dtb
+boot/dtb-6.12.64-current-sunxi64/allwinner/sun50i-a64-sopine-baseboard.dtb
+boot/dtb-6.12.64-current-sunxi64/allwinner/sun50i-a64-teres-i.dtb
+boot/dtb-6.12.64-current-sunxi64/allwinner/sun50i-h313-tanix-tx1.dtb
+boot/dtb-6.12.64-current-sunxi64/allwinner/sun50i-h313-x96q-lpddr3.dtb
+boot/dtb-6.12.64-current-sunxi64/allwinner/sun50i-h5-bananapi-m2-plus-v1.2.dtb
+boot/dtb-6.12.64-current-sunxi64/allwinner/sun50i-h5-bananapi-m2-plus.dtb
+boot/dtb-6.12.64-current-sunxi64/allwinner/sun50i-h5-emlid-neutis-n5-devboard.dtb
+boot/dtb-6.12.64-current-sunxi64/allwinner/sun50i-h5-libretech-all-h3-cc.dtb
+boot/dtb-6.12.64-current-sunxi64/allwinner/sun50i-h5-libretech-all-h3-it.dtb
+boot/dtb-6.12.64-current-sunxi64/allwinner/sun50i-h5-libretech-all-h5-cc.dtb
+boot/dtb-6.12.64-current-sunxi64/allwinner/sun50i-h5-nanopi-k1-plus.dtb
+boot/dtb-6.12.64-current-sunxi64/allwinner/sun50i-h5-nanopi-m1-plus2.dtb
+boot/dtb-6.12.64-current-sunxi64/allwinner/sun50i-h5-nanopi-neo-core2.dtb
+boot/dtb-6.12.64-current-sunxi64/allwinner/sun50i-h5-nanopi-neo-plus2.dtb
+boot/dtb-6.12.64-current-sunxi64/allwinner/sun50i-h5-nanopi-neo2-v1.1.dtb
+boot/dtb-6.12.64-current-sunxi64/allwinner/sun50i-h5-nanopi-neo2.dtb
+boot/dtb-6.12.64-current-sunxi64/allwinner/sun50i-h5-nanopi-r1s-h5.dtb
+boot/dtb-6.12.64-current-sunxi64/allwinner/sun50i-h5-orangepi-pc2.dtb
+boot/dtb-6.12.64-current-sunxi64/allwinner/sun50i-h5-orangepi-prime.dtb
+boot/dtb-6.12.64-current-sunxi64/allwinner/sun50i-h5-orangepi-zero-plus.dtb
+boot/dtb-6.12.64-current-sunxi64/allwinner/sun50i-h5-orangepi-zero-plus2.dtb
+boot/dtb-6.12.64-current-sunxi64/allwinner/sun50i-h6-beelink-gs1.dtb
+boot/dtb-6.12.64-current-sunxi64/allwinner/sun50i-h6-inovato-quadra.dtb
+boot/dtb-6.12.64-current-sunxi64/allwinner/sun50i-h6-orangepi-3-lts.dtb
+boot/dtb-6.12.64-current-sunxi64/allwinner/sun50i-h6-orangepi-3.dtb
+boot/dtb-6.12.64-current-sunxi64/allwinner/sun50i-h6-orangepi-lite2.dtb
+boot/dtb-6.12.64-current-sunxi64/allwinner/sun50i-h6-orangepi-one-plus.dtb
+boot/dtb-6.12.64-current-sunxi64/allwinner/sun50i-h6-pine-h64-model-b.dtb
+boot/dtb-6.12.64-current-sunxi64/allwinner/sun50i-h6-pine-h64.dtb
+boot/dtb-6.12.64-current-sunxi64/allwinner/sun50i-h6-tanix-tx6-mini.dtb
+boot/dtb-6.12.64-current-sunxi64/allwinner/sun50i-h6-tanix-tx6.dtb
+boot/dtb-6.12.64-current-sunxi64/allwinner/sun50i-h616-bigtreetech-cb1-emmc.dtb
+boot/dtb-6.12.64-current-sunxi64/allwinner/sun50i-h616-bigtreetech-cb1-manta.dtb
+boot/dtb-6.12.64-current-sunxi64/allwinner/sun50i-h616-bigtreetech-cb1-sd.dtb
+boot/dtb-6.12.64-current-sunxi64/allwinner/sun50i-h616-bigtreetech-pi.dtb
+boot/dtb-6.12.64-current-sunxi64/allwinner/sun50i-h616-orangepi-zero2.dtb
+boot/dtb-6.12.64-current-sunxi64/allwinner/sun50i-h616-x96-mate.dtb
+boot/dtb-6.12.64-current-sunxi64/allwinner/sun50i-h618-bananapi-m4-berry.dtb
+boot/dtb-6.12.64-current-sunxi64/allwinner/sun50i-h618-bananapi-m4-zero.dtb
+boot/dtb-6.12.64-current-sunxi64/allwinner/sun50i-h618-kickpi-k2b.dtb
+boot/dtb-6.12.64-current-sunxi64/allwinner/sun50i-h618-longanpi-3h.dtb
+boot/dtb-6.12.64-current-sunxi64/allwinner/sun50i-h618-orangepi-zero2w.dtb
+boot/dtb-6.12.64-current-sunxi64/allwinner/sun50i-h618-orangepi-zero3.dtb
+boot/dtb-6.12.64-current-sunxi64/allwinner/sun50i-h618-transpeed-8k618-t.dtb
+boot/dtb-6.12.64-current-sunxi64/allwinner/sun50i-h64-remix-mini-pc.dtb
+boot/dtb-6.12.64-current-sunxi64/allwinner/sun50i-h700-anbernic-rg35xx-2024.dtb
+boot/dtb-6.12.64-current-sunxi64/allwinner/sun50i-h700-anbernic-rg35xx-h.dtb
+boot/dtb-6.12.64-current-sunxi64/allwinner/sun50i-h700-anbernic-rg35xx-plus.dtb
+boot/dtb-6.12.64-current-sunxi64/allwinner/sun50i-h700-anbernic-rg35xx-sp.dtb
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/README.sun50i-a64-overlays
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/README.sun50i-h5-overlays
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/sun50i-a64-fixup.scr
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/sun50i-a64-i2c0.dtbo
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/sun50i-a64-i2c1.dtbo
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/sun50i-a64-pine64-7inch-lcd.dtbo
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/sun50i-a64-pps-gpio.dtbo
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/sun50i-a64-spi-add-cs1.dtbo
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/sun50i-a64-spi-jedec-nor.dtbo
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/sun50i-a64-spi-spidev.dtbo
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/sun50i-a64-uart1.dtbo
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/sun50i-a64-uart2.dtbo
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/sun50i-a64-uart3.dtbo
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/sun50i-a64-uart4.dtbo
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/sun50i-a64-w1-gpio.dtbo
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/sun50i-h5-analog-codec.dtbo
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/sun50i-h5-cir.dtbo
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/sun50i-h5-cpu-clock-1.0GHz-1.1v.dtbo
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/sun50i-h5-cpu-clock-1.2GHz-1.3v.dtbo
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/sun50i-h5-cpu-clock-1.3GHz-1.3v.dtbo
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/sun50i-h5-fixup.scr
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/sun50i-h5-gpio-regulator-1.3v.dtbo
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/sun50i-h5-i2c0.dtbo
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/sun50i-h5-i2c1.dtbo
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/sun50i-h5-i2c2.dtbo
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/sun50i-h5-pps-gpio.dtbo
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/sun50i-h5-pwm.dtbo
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/sun50i-h5-spdif-out.dtbo
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/sun50i-h5-spi-add-cs1.dtbo
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/sun50i-h5-spi-jedec-nor.dtbo
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/sun50i-h5-spi-spidev.dtbo
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/sun50i-h5-tve.dtbo
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/sun50i-h5-uart1.dtbo
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/sun50i-h5-uart2.dtbo
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/sun50i-h5-uart3.dtbo
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/sun50i-h5-usbhost0.dtbo
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/sun50i-h5-usbhost1.dtbo
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/sun50i-h5-usbhost2.dtbo
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/sun50i-h5-usbhost3.dtbo
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/sun50i-h5-w1-gpio.dtbo
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/sun50i-h6-fixup.scr
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/sun50i-h6-i2c0.dtbo
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/sun50i-h6-i2c1.dtbo
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/sun50i-h6-i2c2.dtbo
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/sun50i-h6-pwm.dtbo
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/sun50i-h6-ruart.dtbo
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/sun50i-h6-spi-add-cs1.dtbo
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/sun50i-h6-spi-jedec-nor.dtbo
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/sun50i-h6-spi-spidev.dtbo
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/sun50i-h6-spi-spidev1.dtbo
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/sun50i-h6-uart1.dtbo
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/sun50i-h6-uart2.dtbo
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/sun50i-h6-uart3.dtbo
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/sun50i-h6-w1-gpio.dtbo
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/sun50i-h616-bananapi-m4-pg-15-16-i2c4.dtbo
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/sun50i-h616-bananapi-m4-pg-17-18-i2c3.dtbo
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/sun50i-h616-bananapi-m4-pg-6-7-uart1.dtbo
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/sun50i-h616-bananapi-m4-pg-8-9-rts-cts-uart1.dtbo
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/sun50i-h616-bananapi-m4-ph-2-3-uart5.dtbo
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/sun50i-h616-bananapi-m4-pi-13-14-uart4.dtbo
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/sun50i-h616-bananapi-m4-pi-15-16-rts-cts-uart4.dtbo
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/sun50i-h616-bananapi-m4-pi-5-6-i2c0.dtbo
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/sun50i-h616-bananapi-m4-pi-7-8-i2c1.dtbo
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/sun50i-h616-bananapi-m4-sdio-wifi-bt.dtbo
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/sun50i-h616-bananapi-m4-spi1-cs0-cs1-spidev.dtbo
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/sun50i-h616-bananapi-m4-spi1-cs0-spidev.dtbo
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/sun50i-h616-bananapi-m4-spi1-cs1-spidev.dtbo
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/sun50i-h616-fixup.scr
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/sun50i-h616-gpu.dtbo
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/sun50i-h616-i2c0-pi.dtbo
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/sun50i-h616-i2c1-pi.dtbo
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/sun50i-h616-i2c2-ph.dtbo
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/sun50i-h616-i2c2-pi.dtbo
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/sun50i-h616-i2c3-pg.dtbo
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/sun50i-h616-i2c3-ph.dtbo
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/sun50i-h616-i2c4-pg.dtbo
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/sun50i-h616-i2c4-ph.dtbo
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/sun50i-h616-ir.dtbo
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/sun50i-h616-light.dtbo
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/sun50i-h616-mcp2515.dtbo
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/sun50i-h616-spi-spidev.dtbo
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/sun50i-h616-spidev0_0.dtbo
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/sun50i-h616-spidev1_0.dtbo
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/sun50i-h616-spidev1_1.dtbo
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/sun50i-h616-spidev1_2.dtbo
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/sun50i-h616-tft35_spi.dtbo
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/sun50i-h616-uart2-pg-rts-cts.dtbo
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/sun50i-h616-uart2-pg.dtbo
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/sun50i-h616-uart2-ph-rts-cts.dtbo
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/sun50i-h616-uart2-ph.dtbo
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/sun50i-h616-uart5.dtbo
+boot/dtb-6.12.64-current-sunxi64/allwinner/overlay/sun50i-h616-ws2812.dtbo
+etc/
+etc/.pwd.lock
+etc/.resolv.conf.systemd-resolved.bak
+etc/adduser.conf
+etc/armbian-distribution-status
+etc/armbian-image-release
+etc/armbian-release
+etc/armbian.txt
+etc/bash.bashrc
+etc/bash_completion
+etc/bindresvport.blacklist
+etc/ca-certificates.conf
+etc/crontab
+etc/debconf.conf
+etc/debian_version
+etc/deluser.conf
+etc/e2scrub.conf
+etc/environment
+etc/ethertypes
+etc/fake-hwclock.data
+etc/gai.conf
+etc/group
+etc/group-
+etc/gshadow
+etc/gshadow-
+etc/host.conf
+etc/hostname
+etc/hosts
+etc/hosts.allow
+etc/hosts.deny
+etc/inputrc
+etc/issue
+etc/issue.net
+etc/ld.so.cache
+etc/ld.so.conf
+etc/libaudit.conf
+etc/locale.alias
+etc/locale.gen
+etc/localtime -> ../usr/share/zoneinfo/America/Mazatlan
+etc/login.defs
+etc/logrotate.conf
+etc/machine-id
+etc/manpath.config
+etc/mime.types
+etc/mke2fs.conf
+etc/modules
+etc/motd -> /var/run/motd
+etc/mtab -> ../proc/self/mounts
+etc/nanorc
+etc/netconfig
+etc/networks
+etc/nsswitch.conf
+etc/os-release
+etc/pam.conf
+etc/passwd
+etc/passwd-
+etc/profile
+etc/protocols
+etc/rc.local
+etc/resolv.conf -> /run/systemd/resolve/stub-resolv.conf
+etc/rmt -> /usr/sbin/rmt
+etc/rpc
+etc/rsyslog.conf
+etc/securetty
+etc/services
+etc/shadow
+etc/shadow-
+etc/shells
+etc/subgid
+etc/subgid-
+etc/subuid
+etc/subuid-
+etc/sudo.conf
+etc/sudo_logsrvd.conf
+etc/sudoers
+etc/sysctl.conf
+etc/timezone
+etc/ucf.conf
+etc/wgetrc
+etc/xattr.conf
+etc/NetworkManager/
+etc/NetworkManager/conf.d/
+etc/NetworkManager/conf.d/zz-10-override-wifi-random-mac-disable.conf
+etc/NetworkManager/conf.d/zz-20-override-wifi-powersave-disable.conf
+etc/X11/
+etc/X11/Xsession.d/
+etc/X11/Xsession.d/20dbus_xdg-runtime
+etc/X11/Xsession.d/90gpg-agent
+etc/X11/xkb/
+etc/X11/xorg.conf.d/
+etc/X11/xorg.conf.d/01-armbian-defaults.conf
+etc/alternatives/
+etc/alternatives/README
+etc/alternatives/awk -> /usr/bin/mawk
+etc/alternatives/awk.1.gz -> /usr/share/man/man1/mawk.1.gz
+etc/alternatives/builtins.7.gz -> /usr/share/man/man7/bash-builtins.7.gz
+etc/alternatives/editor -> /bin/nano
+etc/alternatives/editor.1.gz -> /usr/share/man/man1/nano.1.gz
+etc/alternatives/figlet -> /usr/bin/figlet-figlet
+etc/alternatives/figlet.6.gz -> /usr/share/man/man6/figlet-figlet.6.gz
+etc/alternatives/lzcat -> /usr/bin/xzcat
+etc/alternatives/lzcat.1.gz -> /usr/share/man/man1/xzcat.1.gz
+etc/alternatives/lzcmp -> /usr/bin/xzcmp
+etc/alternatives/lzcmp.1.gz -> /usr/share/man/man1/xzcmp.1.gz
+etc/alternatives/lzdiff -> /usr/bin/xzdiff
+etc/alternatives/lzdiff.1.gz -> /usr/share/man/man1/xzdiff.1.gz
+etc/alternatives/lzegrep -> /usr/bin/xzegrep
+etc/alternatives/lzegrep.1.gz -> /usr/share/man/man1/xzegrep.1.gz
+etc/alternatives/lzfgrep -> /usr/bin/xzfgrep
+etc/alternatives/lzfgrep.1.gz -> /usr/share/man/man1/xzfgrep.1.gz
+etc/alternatives/lzgrep -> /usr/bin/xzgrep
+etc/alternatives/lzgrep.1.gz -> /usr/share/man/man1/xzgrep.1.gz
+etc/alternatives/lzless -> /usr/bin/xzless
+etc/alternatives/lzless.1.gz -> /usr/share/man/man1/xzless.1.gz
+etc/alternatives/lzma -> /usr/bin/xz
+etc/alternatives/lzma.1.gz -> /usr/share/man/man1/xz.1.gz
+etc/alternatives/lzmore -> /usr/bin/xzmore
+etc/alternatives/lzmore.1.gz -> /usr/share/man/man1/xzmore.1.gz
+etc/alternatives/mt -> /bin/mt-gnu
+etc/alternatives/mt.1.gz -> /usr/share/man/man1/mt-gnu.1.gz
+etc/alternatives/nawk -> /usr/bin/mawk
+etc/alternatives/nawk.1.gz -> /usr/share/man/man1/mawk.1.gz
+etc/alternatives/pager -> /usr/bin/less
+etc/alternatives/pager.1.gz -> /usr/share/man/man1/less.1.gz
+etc/alternatives/pico -> /bin/nano
+etc/alternatives/pico.1.gz -> /usr/share/man/man1/nano.1.gz
+etc/alternatives/pinentry -> /usr/bin/pinentry-curses
+etc/alternatives/pinentry.1.gz -> /usr/share/man/man1/pinentry-curses.1.gz
+etc/alternatives/regulatory.db -> /lib/firmware/regulatory.db-debian
+etc/alternatives/regulatory.db.p7s -> /lib/firmware/regulatory.db.p7s-debian
+etc/alternatives/rmt -> /usr/sbin/rmt-tar
+etc/alternatives/rmt.8.gz -> /usr/share/man/man8/rmt-tar.8.gz
+etc/alternatives/unlzma -> /usr/bin/unxz
+etc/alternatives/unlzma.1.gz -> /usr/share/man/man1/unxz.1.gz
+etc/alternatives/which -> /usr/bin/which.debianutils
+etc/alternatives/which.1.gz -> /usr/share/man/man1/which.debianutils.1.gz
+etc/alternatives/which.de1.gz -> /usr/share/man/de/man1/which.debianutils.1.gz
+etc/alternatives/which.es1.gz -> /usr/share/man/es/man1/which.debianutils.1.gz
+etc/alternatives/which.fr1.gz -> /usr/share/man/fr/man1/which.debianutils.1.gz
+etc/alternatives/which.it1.gz -> /usr/share/man/it/man1/which.debianutils.1.gz
+etc/alternatives/which.ja1.gz -> /usr/share/man/ja/man1/which.debianutils.1.gz
+etc/alternatives/which.pl1.gz -> /usr/share/man/pl/man1/which.debianutils.1.gz
+etc/alternatives/which.sl1.gz -> /usr/share/man/sl/man1/which.debianutils.1.gz
+etc/apparmor.d/
+etc/apparmor.d/usr.bin.man
+etc/apparmor.d/local/
+etc/apparmor.d/local/usr.bin.man
+etc/apt/
+etc/apt/apt.conf.d/
+etc/apt/apt.conf.d/01autoremove
+etc/apt/apt.conf.d/02-armbian-compress-indexes
+etc/apt/apt.conf.d/02-armbian-periodic
+etc/apt/apt.conf.d/02-armbian-postupdate
+etc/apt/apt.conf.d/70debconf
+etc/apt/apt.conf.d/71-armbian-no-recommends
+etc/apt/apt.conf.d/81-armbian-no-languages
+etc/apt/auth.conf.d/
+etc/apt/keyrings/
+etc/apt/preferences.d/
+etc/apt/preferences.d/armbian
+etc/apt/sources.list.d/
+etc/apt/sources.list.d/armbian-config.sources
+etc/apt/sources.list.d/armbian.sources
+etc/apt/sources.list.d/debian.sources
+etc/apt/trusted.gpg.d/
+etc/apt/trusted.gpg.d/debian-archive-bookworm-automatic.asc
+etc/apt/trusted.gpg.d/debian-archive-bookworm-security-automatic.asc
+etc/apt/trusted.gpg.d/debian-archive-bookworm-stable.asc
+etc/apt/trusted.gpg.d/debian-archive-bullseye-automatic.asc
+etc/apt/trusted.gpg.d/debian-archive-bullseye-security-automatic.asc
+etc/apt/trusted.gpg.d/debian-archive-bullseye-stable.asc
+etc/apt/trusted.gpg.d/debian-archive-trixie-automatic.asc
+etc/apt/trusted.gpg.d/debian-archive-trixie-security-automatic.asc
+etc/apt/trusted.gpg.d/debian-archive-trixie-stable.asc
+etc/apt/trusted.gpg.d/debian-ports-archive-2025.asc
+etc/apt/trusted.gpg.d/debian-ports-archive-2026.asc
+etc/apt/trusted.gpg.d/debian-ports-archive-2027.asc
+etc/armbianmonitor/
+etc/armbianmonitor/datasources/
+etc/armbianmonitor/datasources/soctemp -> /sys/class/hwmon/hwmon0/temp1_input
+etc/binfmt.d/
+etc/bluetooth/
+etc/bluetooth/input.conf
+etc/bluetooth/main.conf
+etc/bluetooth/network.conf
+etc/ca-certificates/
+etc/ca-certificates/update.d/
+etc/console-setup/
+etc/console-setup/cached_UTF-8_del.kmap.gz
+etc/console-setup/cached_Uni2-Fixed16.psf.gz
+etc/console-setup/cached_setup_font.sh
+etc/console-setup/cached_setup_keyboard.sh
+etc/console-setup/cached_setup_terminal.sh
+etc/console-setup/compose.ARMSCII-8.inc
+etc/console-setup/compose.CP1251.inc
+etc/console-setup/compose.CP1255.inc
+etc/console-setup/compose.CP1256.inc
+etc/console-setup/compose.GEORGIAN-ACADEMY.inc
+etc/console-setup/compose.GEORGIAN-PS.inc
+etc/console-setup/compose.IBM1133.inc
+etc/console-setup/compose.ISIRI-3342.inc
+etc/console-setup/compose.ISO-8859-1.inc
+etc/console-setup/compose.ISO-8859-10.inc
+etc/console-setup/compose.ISO-8859-11.inc
+etc/console-setup/compose.ISO-8859-13.inc
+etc/console-setup/compose.ISO-8859-14.inc
+etc/console-setup/compose.ISO-8859-15.inc
+etc/console-setup/compose.ISO-8859-16.inc
+etc/console-setup/compose.ISO-8859-2.inc
+etc/console-setup/compose.ISO-8859-3.inc
+etc/console-setup/compose.ISO-8859-4.inc
+etc/console-setup/compose.ISO-8859-5.inc
+etc/console-setup/compose.ISO-8859-6.inc
+etc/console-setup/compose.ISO-8859-7.inc
+etc/console-setup/compose.ISO-8859-8.inc
+etc/console-setup/compose.ISO-8859-9.inc
+etc/console-setup/compose.KOI8-R.inc
+etc/console-setup/compose.KOI8-U.inc
+etc/console-setup/compose.TIS-620.inc
+etc/console-setup/compose.VISCII.inc
+etc/console-setup/remap.inc
+etc/cron.d/
+etc/cron.d/.placeholder
+etc/cron.d/armbian-check-battery
+etc/cron.d/armbian-truncate-logs
+etc/cron.d/armbian-updates
+etc/cron.d/e2scrub_all
+etc/cron.daily/
+etc/cron.daily/.placeholder
+etc/cron.daily/apt-compat
+etc/cron.daily/armbian-quotes
+etc/cron.daily/armbian-ram-logging
+etc/cron.daily/debsums
+etc/cron.daily/dpkg
+etc/cron.daily/logrotate
+etc/cron.daily/man-db
+etc/cron.hourly/
+etc/cron.hourly/.placeholder
+etc/cron.hourly/fake-hwclock
+etc/cron.monthly/
+etc/cron.monthly/.placeholder
+etc/cron.monthly/debsums
+etc/cron.weekly/
+etc/cron.weekly/.placeholder
+etc/cron.weekly/debsums
+etc/cron.weekly/man-db
+etc/cron.yearly/
+etc/cron.yearly/.placeholder
+etc/dbus-1/
+etc/dbus-1/session.d/
+etc/dbus-1/system.d/
+etc/dbus-1/system.d/bluetooth.conf
+etc/dbus-1/system.d/wpa_supplicant.conf
+etc/default/
+etc/default/armbian-firstrun
+etc/default/armbian-motd
+etc/default/armbian-ramlog
+etc/default/armbian-zram-config
+etc/default/bluetooth
+etc/default/console-setup
+etc/default/cpufrequtils
+etc/default/cron
+etc/default/dbus
+etc/default/debsums
+etc/default/fake-hwclock
+etc/default/hwclock
+etc/default/keyboard
+etc/default/locale
+etc/default/nss
+etc/default/rng-tools
+etc/default/rsync
+etc/default/ssh
+etc/default/useradd
+etc/dhcp/
+etc/dhcp/dhclient-exit-hooks.d/
+etc/dhcp/dhclient-exit-hooks.d/timesyncd
+etc/dpkg/
+etc/dpkg/dpkg.cfg
+etc/dpkg/dpkg.cfg.d/
+etc/dpkg/origins/
+etc/dpkg/origins/armbian
+etc/dpkg/origins/debian
+etc/emacs/
+etc/emacs/site-start.d/
+etc/emacs/site-start.d/50figlet.el
+etc/groff/
+etc/groff/man.local
+etc/groff/mdoc.local
+etc/gss/
+etc/gss/mech.d/
+etc/ifplugd/
+etc/ifplugd/action.d/
+etc/ifplugd/action.d/action_wpa -> ../../wpa_supplicant/action_wpa.sh
+etc/init.d/
+etc/init.d/alsa-utils
+etc/init.d/bluetooth
+etc/init.d/console-setup.sh
+etc/init.d/cron
+etc/init.d/dbus
+etc/init.d/fake-hwclock
+etc/init.d/hwclock.sh
+etc/init.d/keyboard-setup.sh
+etc/init.d/kmod
+etc/init.d/procps
+etc/init.d/rsync
+etc/init.d/ssh
+etc/init.d/sudo
+etc/init.d/udev
+etc/initramfs-tools/
+etc/initramfs-tools/initramfs.conf
+etc/initramfs-tools/modules
+etc/initramfs-tools/update-initramfs.conf
+etc/initramfs-tools/conf.d/
+etc/initramfs-tools/hooks/
+etc/initramfs-tools/scripts/
+etc/initramfs-tools/scripts/init-bottom/
+etc/initramfs-tools/scripts/init-premount/
+etc/initramfs-tools/scripts/init-top/
+etc/initramfs-tools/scripts/local-bottom/
+etc/initramfs-tools/scripts/local-premount/
+etc/initramfs-tools/scripts/local-top/
+etc/initramfs-tools/scripts/nfs-bottom/
+etc/initramfs-tools/scripts/nfs-premount/
+etc/initramfs-tools/scripts/nfs-top/
+etc/initramfs-tools/scripts/panic/
+etc/initramfs/
+etc/initramfs/post-update.d/
+etc/initramfs/post-update.d/99-uboot
+etc/iproute2/
+etc/iproute2/bpf_pinning
+etc/iproute2/ematch_map
+etc/iproute2/group
+etc/iproute2/nl_protos
+etc/iproute2/rt_dsfield
+etc/iproute2/rt_protos
+etc/iproute2/rt_realms
+etc/iproute2/rt_scopes
+etc/iproute2/rt_tables
+etc/iproute2/rt_protos.d/
+etc/iproute2/rt_protos.d/README
+etc/iproute2/rt_tables.d/
+etc/iproute2/rt_tables.d/README
+etc/kernel/
+etc/kernel/install.d/
+etc/kernel/postinst.d/
+etc/kernel/postinst.d/initramfs-tools
+etc/kernel/postinst.d/xx-initramfs-cleanup
+etc/kernel/postrm.d/
+etc/kernel/postrm.d/initramfs-tools
+etc/kernel/postrm.d/xx-initramfs-cleanup
+etc/kernel/preinst.d/
+etc/kernel/prerm.d/
+etc/ld.so.conf.d/
+etc/ld.so.conf.d/aarch64-linux-gnu.conf
+etc/ld.so.conf.d/libc.conf
+etc/libnl-3/
+etc/libnl-3/classid
+etc/libnl-3/pktloc
+etc/logcheck/
+etc/logcheck/ignore.d.server/
+etc/logcheck/ignore.d.server/gpg-agent
+etc/logcheck/ignore.d.server/rsyslog
+etc/logrotate.d/
+etc/logrotate.d/alternatives
+etc/logrotate.d/apt
+etc/logrotate.d/armbian-hardware-monitor
+etc/logrotate.d/btmp
+etc/logrotate.d/dpkg
+etc/logrotate.d/rsyslog
+etc/logrotate.d/wtmp
+etc/modprobe.d/
+etc/modprobe.d/8189fs.conf
+etc/modprobe.d/r8723bs.conf
+etc/modules-load.d/
+etc/modules-load.d/modules.conf -> ../modules
+etc/netplan/
+etc/netplan/10-dhcp-all-interfaces.yaml
+etc/netplan/30-wifis-dhcp.yaml
+etc/network/
+etc/network/if-down.d/
+etc/network/if-down.d/wpasupplicant -> ../../wpa_supplicant/ifupdown.sh
+etc/network/if-post-down.d/
+etc/network/if-post-down.d/wpasupplicant -> ../../wpa_supplicant/ifupdown.sh
+etc/network/if-pre-up.d/
+etc/network/if-pre-up.d/wpasupplicant -> ../../wpa_supplicant/ifupdown.sh
+etc/network/if-up.d/
+etc/network/if-up.d/wpasupplicant -> ../../wpa_supplicant/ifupdown.sh
+etc/opt/
+etc/pam.d/
+etc/pam.d/chfn
+etc/pam.d/chpasswd
+etc/pam.d/chsh
+etc/pam.d/common-account
+etc/pam.d/common-auth
+etc/pam.d/common-password
+etc/pam.d/common-session
+etc/pam.d/common-session-noninteractive
+etc/pam.d/cron
+etc/pam.d/login
+etc/pam.d/newusers
+etc/pam.d/other
+etc/pam.d/passwd
+etc/pam.d/runuser
+etc/pam.d/runuser-l
+etc/pam.d/sshd
+etc/pam.d/su
+etc/pam.d/su-l
+etc/pam.d/sudo
+etc/pam.d/sudo-i
+etc/perl/
+etc/perl/Net/
+etc/perl/Net/libnet.cfg
+etc/profile.d/
+etc/profile.d/armbian-activate-profile-sync-daemon.sh
+etc/profile.d/armbian-check-first-login-reboot.sh
+etc/profile.d/armbian-check-first-login.sh
+etc/profile.d/armbian-lang.sh
+etc/profile.d/armbian-ssh-title.sh
+etc/profile.d/bash_completion.sh
+etc/python3.11/
+etc/python3.11/sitecustomize.py
+etc/python3/
+etc/python3/debian_config
+etc/rc0.d/
+etc/rc0.d/K01alsa-utils -> ../init.d/alsa-utils
+etc/rc0.d/K01bluetooth -> ../init.d/bluetooth
+etc/rc0.d/K01fake-hwclock -> ../init.d/fake-hwclock
+etc/rc0.d/K01hwclock.sh -> ../init.d/hwclock.sh
+etc/rc0.d/K01udev -> ../init.d/udev
+etc/rc1.d/
+etc/rc1.d/K01alsa-utils -> ../init.d/alsa-utils
+etc/rc1.d/K01bluetooth -> ../init.d/bluetooth
+etc/rc1.d/K01fake-hwclock -> ../init.d/fake-hwclock
+etc/rc2.d/
+etc/rc2.d/S01bluetooth -> ../init.d/bluetooth
+etc/rc2.d/S01console-setup.sh -> ../init.d/console-setup.sh
+etc/rc2.d/S01cron -> ../init.d/cron
+etc/rc2.d/S01dbus -> ../init.d/dbus
+etc/rc2.d/S01rsync -> ../init.d/rsync
+etc/rc2.d/S01ssh -> ../init.d/ssh
+etc/rc2.d/S01sudo -> ../init.d/sudo
+etc/rc3.d/
+etc/rc3.d/S01bluetooth -> ../init.d/bluetooth
+etc/rc3.d/S01console-setup.sh -> ../init.d/console-setup.sh
+etc/rc3.d/S01cron -> ../init.d/cron
+etc/rc3.d/S01dbus -> ../init.d/dbus
+etc/rc3.d/S01rsync -> ../init.d/rsync
+etc/rc3.d/S01ssh -> ../init.d/ssh
+etc/rc3.d/S01sudo -> ../init.d/sudo
+etc/rc4.d/
+etc/rc4.d/S01bluetooth -> ../init.d/bluetooth
+etc/rc4.d/S01console-setup.sh -> ../init.d/console-setup.sh
+etc/rc4.d/S01cron -> ../init.d/cron
+etc/rc4.d/S01dbus -> ../init.d/dbus
+etc/rc4.d/S01rsync -> ../init.d/rsync
+etc/rc4.d/S01ssh -> ../init.d/ssh
+etc/rc4.d/S01sudo -> ../init.d/sudo
+etc/rc5.d/
+etc/rc5.d/S01bluetooth -> ../init.d/bluetooth
+etc/rc5.d/S01console-setup.sh -> ../init.d/console-setup.sh
+etc/rc5.d/S01cron -> ../init.d/cron
+etc/rc5.d/S01dbus -> ../init.d/dbus
+etc/rc5.d/S01rsync -> ../init.d/rsync
+etc/rc5.d/S01ssh -> ../init.d/ssh
+etc/rc5.d/S01sudo -> ../init.d/sudo
+etc/rc6.d/
+etc/rc6.d/K01alsa-utils -> ../init.d/alsa-utils
+etc/rc6.d/K01bluetooth -> ../init.d/bluetooth
+etc/rc6.d/K01fake-hwclock -> ../init.d/fake-hwclock
+etc/rc6.d/K01hwclock.sh -> ../init.d/hwclock.sh
+etc/rc6.d/K01udev -> ../init.d/udev
+etc/rcS.d/
+etc/rcS.d/S01alsa-utils -> ../init.d/alsa-utils
+etc/rcS.d/S01fake-hwclock -> ../init.d/fake-hwclock
+etc/rcS.d/S01hwclock.sh -> ../init.d/hwclock.sh
+etc/rcS.d/S01keyboard-setup.sh -> ../init.d/keyboard-setup.sh
+etc/rcS.d/S01kmod -> ../init.d/kmod
+etc/rcS.d/S01procps -> ../init.d/procps
+etc/rcS.d/S01udev -> ../init.d/udev
+etc/rsyslog.d/
+etc/runit/
+etc/runit/runsvdir/
+etc/runit/runsvdir/default/
+etc/runit/runsvdir/default/ssh -> /etc/sv/ssh
+etc/security/
+etc/security/access.conf
+etc/security/faillock.conf
+etc/security/group.conf
+etc/security/limits.conf
+etc/security/namespace.conf
+etc/security/namespace.init
+etc/security/opasswd
+etc/security/pam_env.conf
+etc/security/sepermit.conf
+etc/security/time.conf
+etc/security/limits.d/
+etc/security/namespace.d/
+etc/selinux/
+etc/selinux/semanage.conf
+etc/skel/
+etc/skel/.bash_aliases
+etc/skel/.bash_logout
+etc/skel/.bashrc
+etc/skel/.profile
+etc/ssh/
+etc/ssh/moduli
+etc/ssh/ssh_config
+etc/ssh/ssh_host_ecdsa_key
+etc/ssh/ssh_host_ecdsa_key.pub
+etc/ssh/ssh_host_ed25519_key
+etc/ssh/ssh_host_ed25519_key.pub
+etc/ssh/ssh_host_rsa_key
+etc/ssh/ssh_host_rsa_key.pub
+etc/ssh/sshd_config
+etc/ssh/sshd_config.ucf-dist
+etc/ssh/ssh_config.d/
+etc/ssh/sshd_config.d/
+etc/ssl/
+etc/ssl/openssl.cnf
+etc/ssl/certs/
+etc/ssl/certs/002c0b4f.0 -> GlobalSign_Root_R46.pem
+etc/ssl/certs/02265526.0 -> Entrust_Root_Certification_Authority_-_G2.pem
+etc/ssl/certs/062cdee6.0 -> GlobalSign_Root_CA_-_R3.pem
+etc/ssl/certs/064e0aa9.0 -> QuoVadis_Root_CA_2_G3.pem
+etc/ssl/certs/06dc52d5.0 -> SSL.com_EV_Root_Certification_Authority_RSA_R2.pem
+etc/ssl/certs/08063a00.0 -> Security_Communication_RootCA3.pem
+etc/ssl/certs/09789157.0 -> Starfield_Services_Root_Certificate_Authority_-_G2.pem
+etc/ssl/certs/0a775a30.0 -> GTS_Root_R3.pem
+etc/ssl/certs/0b1b94ef.0 -> CFCA_EV_ROOT.pem
+etc/ssl/certs/0b9bc432.0 -> ISRG_Root_X2.pem
+etc/ssl/certs/0bf05006.0 -> SSL.com_Root_Certification_Authority_ECC.pem
+etc/ssl/certs/0f5dc4f3.0 -> UCA_Extended_Validation_Root.pem
+etc/ssl/certs/0f6fa695.0 -> GDCA_TrustAUTH_R5_ROOT.pem
+etc/ssl/certs/1001acf7.0 -> GTS_Root_R1.pem
+etc/ssl/certs/106f3e4d.0 -> Entrust_Root_Certification_Authority_-_EC1.pem
+etc/ssl/certs/14bc7599.0 -> emSign_ECC_Root_CA_-_G3.pem
+etc/ssl/certs/18856ac4.0 -> SecureSign_RootCA11.pem
+etc/ssl/certs/1d3472b9.0 -> GlobalSign_ECC_Root_CA_-_R5.pem
+etc/ssl/certs/1e08bfd1.0 -> IdenTrust_Public_Sector_Root_CA_1.pem
+etc/ssl/certs/1e09d511.0 -> T-TeleSec_GlobalRoot_Class_2.pem
+etc/ssl/certs/244b5494.0 -> DigiCert_High_Assurance_EV_Root_CA.pem
+etc/ssl/certs/2923b3f9.0 -> emSign_Root_CA_-_G1.pem
+etc/ssl/certs/2ae6433e.0 -> CA_Disig_Root_R2.pem
+etc/ssl/certs/2b349938.0 -> AffirmTrust_Commercial.pem
+etc/ssl/certs/32888f65.0 -> Hellenic_Academic_and_Research_Institutions_RootCA_2015.pem
+etc/ssl/certs/3513523f.0 -> DigiCert_Global_Root_CA.pem
+etc/ssl/certs/3bde41ac.0 -> Autoridad_de_Certificacion_Firmaprofesional_CIF_A62634068.pem
+etc/ssl/certs/3bde41ac.1 -> Autoridad_de_Certificacion_Firmaprofesional_CIF_A62634068_2.pem
+etc/ssl/certs/3e44d2f7.0 -> TrustCor_RootCert_CA-2.pem
+etc/ssl/certs/3e45d192.0 -> Hongkong_Post_Root_CA_1.pem
+etc/ssl/certs/3fb36b73.0 -> NAVER_Global_Root_Certification_Authority.pem
+etc/ssl/certs/40193066.0 -> Certum_Trusted_Network_CA_2.pem
+etc/ssl/certs/4042bcee.0 -> ISRG_Root_X1.pem
+etc/ssl/certs/40547a79.0 -> COMODO_Certification_Authority.pem
+etc/ssl/certs/406c9bb1.0 -> emSign_Root_CA_-_C1.pem
+etc/ssl/certs/48bec511.0 -> Certum_Trusted_Network_CA.pem
+etc/ssl/certs/4b718d9b.0 -> emSign_ECC_Root_CA_-_C3.pem
+etc/ssl/certs/4bfab552.0 -> Starfield_Root_Certificate_Authority_-_G2.pem
+etc/ssl/certs/4f316efb.0 -> SwissSign_Gold_CA_-_G2.pem
+etc/ssl/certs/5273a94c.0 -> E-Tugra_Certification_Authority.pem
+etc/ssl/certs/5443e9e3.0 -> T-TeleSec_GlobalRoot_Class_3.pem
+etc/ssl/certs/54657681.0 -> Buypass_Class_2_Root_CA.pem
+etc/ssl/certs/57bcb2da.0 -> SwissSign_Silver_CA_-_G2.pem
+etc/ssl/certs/5860aaa6.0 -> Security_Communication_ECC_RootCA1.pem
+etc/ssl/certs/5931b5bc.0 -> D-TRUST_EV_Root_CA_1_2020.pem
+etc/ssl/certs/5a7722fb.0 -> E-Tugra_Global_Root_CA_ECC_v3.pem
+etc/ssl/certs/5ad8a5d6.0 -> GlobalSign_Root_CA.pem
+etc/ssl/certs/5cd81ad7.0 -> TeliaSonera_Root_CA_v1.pem
+etc/ssl/certs/5d3033c5.0 -> TrustCor_RootCert_CA-1.pem
+etc/ssl/certs/5e98733a.0 -> Entrust_Root_Certification_Authority_-_G4.pem
+etc/ssl/certs/5f15c80c.0 -> TWCA_Global_Root_CA.pem
+etc/ssl/certs/5f618aec.0 -> certSIGN_Root_CA_G2.pem
+etc/ssl/certs/607986c7.0 -> DigiCert_Global_Root_G2.pem
+etc/ssl/certs/626dceaf.0 -> GTS_Root_R2.pem
+etc/ssl/certs/653b494a.0 -> Baltimore_CyberTrust_Root.pem
+etc/ssl/certs/66445960.0 -> E-Tugra_Global_Root_CA_RSA_v3.pem
+etc/ssl/certs/68dd7389.0 -> Hongkong_Post_Root_CA_3.pem
+etc/ssl/certs/6b99d060.0 -> Entrust_Root_Certification_Authority.pem
+etc/ssl/certs/6d41d539.0 -> Amazon_Root_CA_2.pem
+etc/ssl/certs/6fa5da56.0 -> SSL.com_Root_Certification_Authority_RSA.pem
+etc/ssl/certs/706f604c.0 -> XRamp_Global_CA_Root.pem
+etc/ssl/certs/749e9e03.0 -> QuoVadis_Root_CA_1_G3.pem
+etc/ssl/certs/75d1b2ed.0 -> DigiCert_Trusted_Root_G4.pem
+etc/ssl/certs/76faf6c0.0 -> QuoVadis_Root_CA_3.pem
+etc/ssl/certs/7719f463.0 -> Hellenic_Academic_and_Research_Institutions_ECC_RootCA_2015.pem
+etc/ssl/certs/773e07ad.0 -> OISTE_WISeKey_Global_Root_GC_CA.pem
+etc/ssl/certs/7a3adc42.0 -> vTrus_Root_CA.pem
+etc/ssl/certs/7a780d93.0 -> Certainly_Root_R1.pem
+etc/ssl/certs/7aaf71c0.0 -> TrustCor_ECA-1.pem
+etc/ssl/certs/7f3d5d1d.0 -> DigiCert_Assured_ID_Root_G3.pem
+etc/ssl/certs/8160b96c.0 -> Microsec_e-Szigno_Root_CA_2009.pem
+etc/ssl/certs/8508e720.0 -> Certainly_Root_E1.pem
+etc/ssl/certs/8cb5ee0f.0 -> Amazon_Root_CA_3.pem
+etc/ssl/certs/8d86cdd1.0 -> certSIGN_ROOT_CA.pem
+etc/ssl/certs/8d89cda1.0 -> Microsoft_ECC_Root_Certificate_Authority_2017.pem
+etc/ssl/certs/8f103249.0 -> Telia_Root_CA_v2.pem
+etc/ssl/certs/9046744a.0 -> Sectigo_Public_Server_Authentication_Root_R46.pem
+etc/ssl/certs/90c5a3c8.0 -> HiPKI_Root_CA_-_G1.pem
+etc/ssl/certs/930ac5d2.0 -> Actalis_Authentication_Root_CA.pem
+etc/ssl/certs/93bc0acc.0 -> AffirmTrust_Networking.pem
+etc/ssl/certs/9482e63a.0 -> Certum_EC-384_CA.pem
+etc/ssl/certs/9846683b.0 -> DigiCert_TLS_ECC_P384_Root_G5.pem
+etc/ssl/certs/988a38cb.0 -> NetLock_Arany_=Class_Gold=_Főtanúsítvány.pem
+etc/ssl/certs/9b5697b0.0 -> Trustwave_Global_ECC_P256_Certification_Authority.pem
+etc/ssl/certs/9c8dfbd4.0 -> AffirmTrust_Premium_ECC.pem
+etc/ssl/certs/9d04f354.0 -> DigiCert_Assured_ID_Root_G2.pem
+etc/ssl/certs/9ef4a08a.0 -> D-TRUST_BR_Root_CA_1_2020.pem
+etc/ssl/certs/9f727ac7.0 -> HARICA_TLS_RSA_Root_CA_2021.pem
+etc/ssl/certs/ACCVRAIZ1.pem -> /usr/share/ca-certificates/mozilla/ACCVRAIZ1.crt
+etc/ssl/certs/AC_RAIZ_FNMT-RCM.pem -> /usr/share/ca-certificates/mozilla/AC_RAIZ_FNMT-RCM.crt
+etc/ssl/certs/AC_RAIZ_FNMT-RCM_SERVIDORES_SEGUROS.pem -> /usr/share/ca-certificates/mozilla/AC_RAIZ_FNMT-RCM_SERVIDORES_SEGUROS.crt
+etc/ssl/certs/ANF_Secure_Server_Root_CA.pem -> /usr/share/ca-certificates/mozilla/ANF_Secure_Server_Root_CA.crt
+etc/ssl/certs/Actalis_Authentication_Root_CA.pem -> /usr/share/ca-certificates/mozilla/Actalis_Authentication_Root_CA.crt
+etc/ssl/certs/AffirmTrust_Commercial.pem -> /usr/share/ca-certificates/mozilla/AffirmTrust_Commercial.crt
+etc/ssl/certs/AffirmTrust_Networking.pem -> /usr/share/ca-certificates/mozilla/AffirmTrust_Networking.crt
+etc/ssl/certs/AffirmTrust_Premium.pem -> /usr/share/ca-certificates/mozilla/AffirmTrust_Premium.crt
+etc/ssl/certs/AffirmTrust_Premium_ECC.pem -> /usr/share/ca-certificates/mozilla/AffirmTrust_Premium_ECC.crt
+etc/ssl/certs/Amazon_Root_CA_1.pem -> /usr/share/ca-certificates/mozilla/Amazon_Root_CA_1.crt
+etc/ssl/certs/Amazon_Root_CA_2.pem -> /usr/share/ca-certificates/mozilla/Amazon_Root_CA_2.crt
+etc/ssl/certs/Amazon_Root_CA_3.pem -> /usr/share/ca-certificates/mozilla/Amazon_Root_CA_3.crt
+etc/ssl/certs/Amazon_Root_CA_4.pem -> /usr/share/ca-certificates/mozilla/Amazon_Root_CA_4.crt
+etc/ssl/certs/Atos_TrustedRoot_2011.pem -> /usr/share/ca-certificates/mozilla/Atos_TrustedRoot_2011.crt
+etc/ssl/certs/Autoridad_de_Certificacion_Firmaprofesional_CIF_A62634068.pem -> /usr/share/ca-certificates/mozilla/Autoridad_de_Certificacion_Firmaprofesional_CIF_A62634068.crt
+etc/ssl/certs/Autoridad_de_Certificacion_Firmaprofesional_CIF_A62634068_2.pem -> /usr/share/ca-certificates/mozilla/Autoridad_de_Certificacion_Firmaprofesional_CIF_A62634068_2.crt
+etc/ssl/certs/Baltimore_CyberTrust_Root.pem -> /usr/share/ca-certificates/mozilla/Baltimore_CyberTrust_Root.crt
+etc/ssl/certs/Buypass_Class_2_Root_CA.pem -> /usr/share/ca-certificates/mozilla/Buypass_Class_2_Root_CA.crt
+etc/ssl/certs/Buypass_Class_3_Root_CA.pem -> /usr/share/ca-certificates/mozilla/Buypass_Class_3_Root_CA.crt
+etc/ssl/certs/CA_Disig_Root_R2.pem -> /usr/share/ca-certificates/mozilla/CA_Disig_Root_R2.crt
+etc/ssl/certs/CFCA_EV_ROOT.pem -> /usr/share/ca-certificates/mozilla/CFCA_EV_ROOT.crt
+etc/ssl/certs/COMODO_Certification_Authority.pem -> /usr/share/ca-certificates/mozilla/COMODO_Certification_Authority.crt
+etc/ssl/certs/COMODO_ECC_Certification_Authority.pem -> /usr/share/ca-certificates/mozilla/COMODO_ECC_Certification_Authority.crt
+etc/ssl/certs/COMODO_RSA_Certification_Authority.pem -> /usr/share/ca-certificates/mozilla/COMODO_RSA_Certification_Authority.crt
+etc/ssl/certs/Certainly_Root_E1.pem -> /usr/share/ca-certificates/mozilla/Certainly_Root_E1.crt
+etc/ssl/certs/Certainly_Root_R1.pem -> /usr/share/ca-certificates/mozilla/Certainly_Root_R1.crt
+etc/ssl/certs/Certigna.pem -> /usr/share/ca-certificates/mozilla/Certigna.crt
+etc/ssl/certs/Certigna_Root_CA.pem -> /usr/share/ca-certificates/mozilla/Certigna_Root_CA.crt
+etc/ssl/certs/Certum_EC-384_CA.pem -> /usr/share/ca-certificates/mozilla/Certum_EC-384_CA.crt
+etc/ssl/certs/Certum_Trusted_Network_CA.pem -> /usr/share/ca-certificates/mozilla/Certum_Trusted_Network_CA.crt
+etc/ssl/certs/Certum_Trusted_Network_CA_2.pem -> /usr/share/ca-certificates/mozilla/Certum_Trusted_Network_CA_2.crt
+etc/ssl/certs/Certum_Trusted_Root_CA.pem -> /usr/share/ca-certificates/mozilla/Certum_Trusted_Root_CA.crt
+etc/ssl/certs/Comodo_AAA_Services_root.pem -> /usr/share/ca-certificates/mozilla/Comodo_AAA_Services_root.crt
+etc/ssl/certs/D-TRUST_BR_Root_CA_1_2020.pem -> /usr/share/ca-certificates/mozilla/D-TRUST_BR_Root_CA_1_2020.crt
+etc/ssl/certs/D-TRUST_EV_Root_CA_1_2020.pem -> /usr/share/ca-certificates/mozilla/D-TRUST_EV_Root_CA_1_2020.crt
+etc/ssl/certs/D-TRUST_Root_Class_3_CA_2_2009.pem -> /usr/share/ca-certificates/mozilla/D-TRUST_Root_Class_3_CA_2_2009.crt
+etc/ssl/certs/D-TRUST_Root_Class_3_CA_2_EV_2009.pem -> /usr/share/ca-certificates/mozilla/D-TRUST_Root_Class_3_CA_2_EV_2009.crt
+etc/ssl/certs/DigiCert_Assured_ID_Root_CA.pem -> /usr/share/ca-certificates/mozilla/DigiCert_Assured_ID_Root_CA.crt
+etc/ssl/certs/DigiCert_Assured_ID_Root_G2.pem -> /usr/share/ca-certificates/mozilla/DigiCert_Assured_ID_Root_G2.crt
+etc/ssl/certs/DigiCert_Assured_ID_Root_G3.pem -> /usr/share/ca-certificates/mozilla/DigiCert_Assured_ID_Root_G3.crt
+etc/ssl/certs/DigiCert_Global_Root_CA.pem -> /usr/share/ca-certificates/mozilla/DigiCert_Global_Root_CA.crt
+etc/ssl/certs/DigiCert_Global_Root_G2.pem -> /usr/share/ca-certificates/mozilla/DigiCert_Global_Root_G2.crt
+etc/ssl/certs/DigiCert_Global_Root_G3.pem -> /usr/share/ca-certificates/mozilla/DigiCert_Global_Root_G3.crt
+etc/ssl/certs/DigiCert_High_Assurance_EV_Root_CA.pem -> /usr/share/ca-certificates/mozilla/DigiCert_High_Assurance_EV_Root_CA.crt
+etc/ssl/certs/DigiCert_TLS_ECC_P384_Root_G5.pem -> /usr/share/ca-certificates/mozilla/DigiCert_TLS_ECC_P384_Root_G5.crt
+etc/ssl/certs/DigiCert_TLS_RSA4096_Root_G5.pem -> /usr/share/ca-certificates/mozilla/DigiCert_TLS_RSA4096_Root_G5.crt
+etc/ssl/certs/DigiCert_Trusted_Root_G4.pem -> /usr/share/ca-certificates/mozilla/DigiCert_Trusted_Root_G4.crt
+etc/ssl/certs/E-Tugra_Certification_Authority.pem -> /usr/share/ca-certificates/mozilla/E-Tugra_Certification_Authority.crt
+etc/ssl/certs/E-Tugra_Global_Root_CA_ECC_v3.pem -> /usr/share/ca-certificates/mozilla/E-Tugra_Global_Root_CA_ECC_v3.crt
+etc/ssl/certs/E-Tugra_Global_Root_CA_RSA_v3.pem -> /usr/share/ca-certificates/mozilla/E-Tugra_Global_Root_CA_RSA_v3.crt
+etc/ssl/certs/Entrust.net_Premium_2048_Secure_Server_CA.pem -> /usr/share/ca-certificates/mozilla/Entrust.net_Premium_2048_Secure_Server_CA.crt
+etc/ssl/certs/Entrust_Root_Certification_Authority.pem -> /usr/share/ca-certificates/mozilla/Entrust_Root_Certification_Authority.crt
+etc/ssl/certs/Entrust_Root_Certification_Authority_-_EC1.pem -> /usr/share/ca-certificates/mozilla/Entrust_Root_Certification_Authority_-_EC1.crt
+etc/ssl/certs/Entrust_Root_Certification_Authority_-_G2.pem -> /usr/share/ca-certificates/mozilla/Entrust_Root_Certification_Authority_-_G2.crt
+etc/ssl/certs/Entrust_Root_Certification_Authority_-_G4.pem -> /usr/share/ca-certificates/mozilla/Entrust_Root_Certification_Authority_-_G4.crt
+etc/ssl/certs/GDCA_TrustAUTH_R5_ROOT.pem -> /usr/share/ca-certificates/mozilla/GDCA_TrustAUTH_R5_ROOT.crt
+etc/ssl/certs/GLOBALTRUST_2020.pem -> /usr/share/ca-certificates/mozilla/GLOBALTRUST_2020.crt
+etc/ssl/certs/GTS_Root_R1.pem -> /usr/share/ca-certificates/mozilla/GTS_Root_R1.crt
+etc/ssl/certs/GTS_Root_R2.pem -> /usr/share/ca-certificates/mozilla/GTS_Root_R2.crt
+etc/ssl/certs/GTS_Root_R3.pem -> /usr/share/ca-certificates/mozilla/GTS_Root_R3.crt
+etc/ssl/certs/GTS_Root_R4.pem -> /usr/share/ca-certificates/mozilla/GTS_Root_R4.crt
+etc/ssl/certs/GlobalSign_ECC_Root_CA_-_R4.pem -> /usr/share/ca-certificates/mozilla/GlobalSign_ECC_Root_CA_-_R4.crt
+etc/ssl/certs/GlobalSign_ECC_Root_CA_-_R5.pem -> /usr/share/ca-certificates/mozilla/GlobalSign_ECC_Root_CA_-_R5.crt
+etc/ssl/certs/GlobalSign_Root_CA.pem -> /usr/share/ca-certificates/mozilla/GlobalSign_Root_CA.crt
+etc/ssl/certs/GlobalSign_Root_CA_-_R3.pem -> /usr/share/ca-certificates/mozilla/GlobalSign_Root_CA_-_R3.crt
+etc/ssl/certs/GlobalSign_Root_CA_-_R6.pem -> /usr/share/ca-certificates/mozilla/GlobalSign_Root_CA_-_R6.crt
+etc/ssl/certs/GlobalSign_Root_E46.pem -> /usr/share/ca-certificates/mozilla/GlobalSign_Root_E46.crt
+etc/ssl/certs/GlobalSign_Root_R46.pem -> /usr/share/ca-certificates/mozilla/GlobalSign_Root_R46.crt
+etc/ssl/certs/Go_Daddy_Class_2_CA.pem -> /usr/share/ca-certificates/mozilla/Go_Daddy_Class_2_CA.crt
+etc/ssl/certs/Go_Daddy_Root_Certificate_Authority_-_G2.pem -> /usr/share/ca-certificates/mozilla/Go_Daddy_Root_Certificate_Authority_-_G2.crt
+etc/ssl/certs/HARICA_TLS_ECC_Root_CA_2021.pem -> /usr/share/ca-certificates/mozilla/HARICA_TLS_ECC_Root_CA_2021.crt
+etc/ssl/certs/HARICA_TLS_RSA_Root_CA_2021.pem -> /usr/share/ca-certificates/mozilla/HARICA_TLS_RSA_Root_CA_2021.crt
+etc/ssl/certs/Hellenic_Academic_and_Research_Institutions_ECC_RootCA_2015.pem -> /usr/share/ca-certificates/mozilla/Hellenic_Academic_and_Research_Institutions_ECC_RootCA_2015.crt
+etc/ssl/certs/Hellenic_Academic_and_Research_Institutions_RootCA_2015.pem -> /usr/share/ca-certificates/mozilla/Hellenic_Academic_and_Research_Institutions_RootCA_2015.crt
+etc/ssl/certs/HiPKI_Root_CA_-_G1.pem -> /usr/share/ca-certificates/mozilla/HiPKI_Root_CA_-_G1.crt
+etc/ssl/certs/Hongkong_Post_Root_CA_1.pem -> /usr/share/ca-certificates/mozilla/Hongkong_Post_Root_CA_1.crt
+etc/ssl/certs/Hongkong_Post_Root_CA_3.pem -> /usr/share/ca-certificates/mozilla/Hongkong_Post_Root_CA_3.crt
+etc/ssl/certs/ISRG_Root_X1.pem -> /usr/share/ca-certificates/mozilla/ISRG_Root_X1.crt
+etc/ssl/certs/ISRG_Root_X2.pem -> /usr/share/ca-certificates/mozilla/ISRG_Root_X2.crt
+etc/ssl/certs/IdenTrust_Commercial_Root_CA_1.pem -> /usr/share/ca-certificates/mozilla/IdenTrust_Commercial_Root_CA_1.crt
+etc/ssl/certs/IdenTrust_Public_Sector_Root_CA_1.pem -> /usr/share/ca-certificates/mozilla/IdenTrust_Public_Sector_Root_CA_1.crt
+etc/ssl/certs/Izenpe.com.pem -> /usr/share/ca-certificates/mozilla/Izenpe.com.crt
+etc/ssl/certs/Microsec_e-Szigno_Root_CA_2009.pem -> /usr/share/ca-certificates/mozilla/Microsec_e-Szigno_Root_CA_2009.crt
+etc/ssl/certs/Microsoft_ECC_Root_Certificate_Authority_2017.pem -> /usr/share/ca-certificates/mozilla/Microsoft_ECC_Root_Certificate_Authority_2017.crt
+etc/ssl/certs/Microsoft_RSA_Root_Certificate_Authority_2017.pem -> /usr/share/ca-certificates/mozilla/Microsoft_RSA_Root_Certificate_Authority_2017.crt
+etc/ssl/certs/NAVER_Global_Root_Certification_Authority.pem -> /usr/share/ca-certificates/mozilla/NAVER_Global_Root_Certification_Authority.crt
+etc/ssl/certs/NetLock_Arany_=Class_Gold=_Főtanúsítvány.pem -> /usr/share/ca-certificates/mozilla/NetLock_Arany_=Class_Gold=_Főtanúsítvány.crt
+etc/ssl/certs/OISTE_WISeKey_Global_Root_GB_CA.pem -> /usr/share/ca-certificates/mozilla/OISTE_WISeKey_Global_Root_GB_CA.crt
+etc/ssl/certs/OISTE_WISeKey_Global_Root_GC_CA.pem -> /usr/share/ca-certificates/mozilla/OISTE_WISeKey_Global_Root_GC_CA.crt
+etc/ssl/certs/QuoVadis_Root_CA_1_G3.pem -> /usr/share/ca-certificates/mozilla/QuoVadis_Root_CA_1_G3.crt
+etc/ssl/certs/QuoVadis_Root_CA_2.pem -> /usr/share/ca-certificates/mozilla/QuoVadis_Root_CA_2.crt
+etc/ssl/certs/QuoVadis_Root_CA_2_G3.pem -> /usr/share/ca-certificates/mozilla/QuoVadis_Root_CA_2_G3.crt
+etc/ssl/certs/QuoVadis_Root_CA_3.pem -> /usr/share/ca-certificates/mozilla/QuoVadis_Root_CA_3.crt
+etc/ssl/certs/QuoVadis_Root_CA_3_G3.pem -> /usr/share/ca-certificates/mozilla/QuoVadis_Root_CA_3_G3.crt
+etc/ssl/certs/SSL.com_EV_Root_Certification_Authority_ECC.pem -> /usr/share/ca-certificates/mozilla/SSL.com_EV_Root_Certification_Authority_ECC.crt
+etc/ssl/certs/SSL.com_EV_Root_Certification_Authority_RSA_R2.pem -> /usr/share/ca-certificates/mozilla/SSL.com_EV_Root_Certification_Authority_RSA_R2.crt
+etc/ssl/certs/SSL.com_Root_Certification_Authority_ECC.pem -> /usr/share/ca-certificates/mozilla/SSL.com_Root_Certification_Authority_ECC.crt
+etc/ssl/certs/SSL.com_Root_Certification_Authority_RSA.pem -> /usr/share/ca-certificates/mozilla/SSL.com_Root_Certification_Authority_RSA.crt
+etc/ssl/certs/SZAFIR_ROOT_CA2.pem -> /usr/share/ca-certificates/mozilla/SZAFIR_ROOT_CA2.crt
+etc/ssl/certs/Sectigo_Public_Server_Authentication_Root_E46.pem -> /usr/share/ca-certificates/mozilla/Sectigo_Public_Server_Authentication_Root_E46.crt
+etc/ssl/certs/Sectigo_Public_Server_Authentication_Root_R46.pem -> /usr/share/ca-certificates/mozilla/Sectigo_Public_Server_Authentication_Root_R46.crt
+etc/ssl/certs/SecureSign_RootCA11.pem -> /usr/share/ca-certificates/mozilla/SecureSign_RootCA11.crt
+etc/ssl/certs/SecureTrust_CA.pem -> /usr/share/ca-certificates/mozilla/SecureTrust_CA.crt
+etc/ssl/certs/Secure_Global_CA.pem -> /usr/share/ca-certificates/mozilla/Secure_Global_CA.crt
+etc/ssl/certs/Security_Communication_ECC_RootCA1.pem -> /usr/share/ca-certificates/mozilla/Security_Communication_ECC_RootCA1.crt
+etc/ssl/certs/Security_Communication_RootCA2.pem -> /usr/share/ca-certificates/mozilla/Security_Communication_RootCA2.crt
+etc/ssl/certs/Security_Communication_RootCA3.pem -> /usr/share/ca-certificates/mozilla/Security_Communication_RootCA3.crt
+etc/ssl/certs/Security_Communication_Root_CA.pem -> /usr/share/ca-certificates/mozilla/Security_Communication_Root_CA.crt
+etc/ssl/certs/Starfield_Class_2_CA.pem -> /usr/share/ca-certificates/mozilla/Starfield_Class_2_CA.crt
+etc/ssl/certs/Starfield_Root_Certificate_Authority_-_G2.pem -> /usr/share/ca-certificates/mozilla/Starfield_Root_Certificate_Authority_-_G2.crt
+etc/ssl/certs/Starfield_Services_Root_Certificate_Authority_-_G2.pem -> /usr/share/ca-certificates/mozilla/Starfield_Services_Root_Certificate_Authority_-_G2.crt
+etc/ssl/certs/SwissSign_Gold_CA_-_G2.pem -> /usr/share/ca-certificates/mozilla/SwissSign_Gold_CA_-_G2.crt
+etc/ssl/certs/SwissSign_Silver_CA_-_G2.pem -> /usr/share/ca-certificates/mozilla/SwissSign_Silver_CA_-_G2.crt
+etc/ssl/certs/T-TeleSec_GlobalRoot_Class_2.pem -> /usr/share/ca-certificates/mozilla/T-TeleSec_GlobalRoot_Class_2.crt
+etc/ssl/certs/T-TeleSec_GlobalRoot_Class_3.pem -> /usr/share/ca-certificates/mozilla/T-TeleSec_GlobalRoot_Class_3.crt
+etc/ssl/certs/TUBITAK_Kamu_SM_SSL_Kok_Sertifikasi_-_Surum_1.pem -> /usr/share/ca-certificates/mozilla/TUBITAK_Kamu_SM_SSL_Kok_Sertifikasi_-_Surum_1.crt
+etc/ssl/certs/TWCA_Global_Root_CA.pem -> /usr/share/ca-certificates/mozilla/TWCA_Global_Root_CA.crt
+etc/ssl/certs/TWCA_Root_Certification_Authority.pem -> /usr/share/ca-certificates/mozilla/TWCA_Root_Certification_Authority.crt
+etc/ssl/certs/TeliaSonera_Root_CA_v1.pem -> /usr/share/ca-certificates/mozilla/TeliaSonera_Root_CA_v1.crt
+etc/ssl/certs/Telia_Root_CA_v2.pem -> /usr/share/ca-certificates/mozilla/Telia_Root_CA_v2.crt
+etc/ssl/certs/TrustCor_ECA-1.pem -> /usr/share/ca-certificates/mozilla/TrustCor_ECA-1.crt
+etc/ssl/certs/TrustCor_RootCert_CA-1.pem -> /usr/share/ca-certificates/mozilla/TrustCor_RootCert_CA-1.crt
+etc/ssl/certs/TrustCor_RootCert_CA-2.pem -> /usr/share/ca-certificates/mozilla/TrustCor_RootCert_CA-2.crt
+etc/ssl/certs/Trustwave_Global_Certification_Authority.pem -> /usr/share/ca-certificates/mozilla/Trustwave_Global_Certification_Authority.crt
+etc/ssl/certs/Trustwave_Global_ECC_P256_Certification_Authority.pem -> /usr/share/ca-certificates/mozilla/Trustwave_Global_ECC_P256_Certification_Authority.crt
+etc/ssl/certs/Trustwave_Global_ECC_P384_Certification_Authority.pem -> /usr/share/ca-certificates/mozilla/Trustwave_Global_ECC_P384_Certification_Authority.crt
+etc/ssl/certs/TunTrust_Root_CA.pem -> /usr/share/ca-certificates/mozilla/TunTrust_Root_CA.crt
+etc/ssl/certs/UCA_Extended_Validation_Root.pem -> /usr/share/ca-certificates/mozilla/UCA_Extended_Validation_Root.crt
+etc/ssl/certs/UCA_Global_G2_Root.pem -> /usr/share/ca-certificates/mozilla/UCA_Global_G2_Root.crt
+etc/ssl/certs/USERTrust_ECC_Certification_Authority.pem -> /usr/share/ca-certificates/mozilla/USERTrust_ECC_Certification_Authority.crt
+etc/ssl/certs/USERTrust_RSA_Certification_Authority.pem -> /usr/share/ca-certificates/mozilla/USERTrust_RSA_Certification_Authority.crt
+etc/ssl/certs/XRamp_Global_CA_Root.pem -> /usr/share/ca-certificates/mozilla/XRamp_Global_CA_Root.crt
+etc/ssl/certs/a3418fda.0 -> GTS_Root_R4.pem
+etc/ssl/certs/a94d09e5.0 -> ACCVRAIZ1.pem
+etc/ssl/certs/aee5f10d.0 -> Entrust.net_Premium_2048_Secure_Server_CA.pem
+etc/ssl/certs/b0e59380.0 -> GlobalSign_ECC_Root_CA_-_R4.pem
+etc/ssl/certs/b1159c4c.0 -> DigiCert_Assured_ID_Root_CA.pem
+etc/ssl/certs/b433981b.0 -> ANF_Secure_Server_Root_CA.pem
+etc/ssl/certs/b66938e9.0 -> Secure_Global_CA.pem
+etc/ssl/certs/b727005e.0 -> AffirmTrust_Premium.pem
+etc/ssl/certs/b7a5b843.0 -> TWCA_Root_Certification_Authority.pem
+etc/ssl/certs/b81b93f0.0 -> AC_RAIZ_FNMT-RCM_SERVIDORES_SEGUROS.pem
+etc/ssl/certs/bf53fb88.0 -> Microsoft_RSA_Root_Certificate_Authority_2017.pem
+etc/ssl/certs/c01eb047.0 -> UCA_Global_G2_Root.pem
+etc/ssl/certs/c28a8a30.0 -> D-TRUST_Root_Class_3_CA_2_2009.pem
+etc/ssl/certs/ca-certificates.crt
+etc/ssl/certs/ca6e4ad9.0 -> ePKI_Root_Certification_Authority.pem
+etc/ssl/certs/cbf06781.0 -> Go_Daddy_Root_Certificate_Authority_-_G2.pem
+etc/ssl/certs/cc450945.0 -> Izenpe.com.pem
+etc/ssl/certs/cd58d51e.0 -> Security_Communication_RootCA2.pem
+etc/ssl/certs/cd8c0d63.0 -> AC_RAIZ_FNMT-RCM.pem
+etc/ssl/certs/ce5e74ef.0 -> Amazon_Root_CA_1.pem
+etc/ssl/certs/certSIGN_ROOT_CA.pem -> /usr/share/ca-certificates/mozilla/certSIGN_ROOT_CA.crt
+etc/ssl/certs/certSIGN_Root_CA_G2.pem -> /usr/share/ca-certificates/mozilla/certSIGN_Root_CA_G2.crt
+etc/ssl/certs/d4dae3dd.0 -> D-TRUST_Root_Class_3_CA_2_EV_2009.pem
+etc/ssl/certs/d52c538d.0 -> DigiCert_TLS_RSA4096_Root_G5.pem
+etc/ssl/certs/d6325660.0 -> COMODO_RSA_Certification_Authority.pem
+etc/ssl/certs/d7e8dc79.0 -> QuoVadis_Root_CA_2.pem
+etc/ssl/certs/d887a5bb.0 -> Trustwave_Global_ECC_P384_Certification_Authority.pem
+etc/ssl/certs/da0cfd1d.0 -> Sectigo_Public_Server_Authentication_Root_E46.pem
+etc/ssl/certs/dc4d6a89.0 -> GlobalSign_Root_CA_-_R6.pem
+etc/ssl/certs/dd8e9d41.0 -> DigiCert_Global_Root_G3.pem
+etc/ssl/certs/de6d66f3.0 -> Amazon_Root_CA_4.pem
+etc/ssl/certs/e-Szigno_Root_CA_2017.pem -> /usr/share/ca-certificates/mozilla/e-Szigno_Root_CA_2017.crt
+etc/ssl/certs/e113c810.0 -> Certigna.pem
+etc/ssl/certs/e18bfb83.0 -> QuoVadis_Root_CA_3_G3.pem
+etc/ssl/certs/e35234b1.0 -> Certum_Trusted_Root_CA.pem
+etc/ssl/certs/e36a6752.0 -> Atos_TrustedRoot_2011.pem
+etc/ssl/certs/e73d606e.0 -> OISTE_WISeKey_Global_Root_GB_CA.pem
+etc/ssl/certs/e868b802.0 -> e-Szigno_Root_CA_2017.pem
+etc/ssl/certs/e8de2f56.0 -> Buypass_Class_3_Root_CA.pem
+etc/ssl/certs/ePKI_Root_Certification_Authority.pem -> /usr/share/ca-certificates/mozilla/ePKI_Root_Certification_Authority.crt
+etc/ssl/certs/ecccd8db.0 -> HARICA_TLS_ECC_Root_CA_2021.pem
+etc/ssl/certs/ed858448.0 -> vTrus_ECC_Root_CA.pem
+etc/ssl/certs/ee64a828.0 -> Comodo_AAA_Services_root.pem
+etc/ssl/certs/eed8c118.0 -> COMODO_ECC_Certification_Authority.pem
+etc/ssl/certs/ef954a4e.0 -> IdenTrust_Commercial_Root_CA_1.pem
+etc/ssl/certs/emSign_ECC_Root_CA_-_C3.pem -> /usr/share/ca-certificates/mozilla/emSign_ECC_Root_CA_-_C3.crt
+etc/ssl/certs/emSign_ECC_Root_CA_-_G3.pem -> /usr/share/ca-certificates/mozilla/emSign_ECC_Root_CA_-_G3.crt
+etc/ssl/certs/emSign_Root_CA_-_C1.pem -> /usr/share/ca-certificates/mozilla/emSign_Root_CA_-_C1.crt
+etc/ssl/certs/emSign_Root_CA_-_G1.pem -> /usr/share/ca-certificates/mozilla/emSign_Root_CA_-_G1.crt
+etc/ssl/certs/f081611a.0 -> Go_Daddy_Class_2_CA.pem
+etc/ssl/certs/f0c70a8d.0 -> SSL.com_EV_Root_Certification_Authority_ECC.pem
+etc/ssl/certs/f249de83.0 -> Trustwave_Global_Certification_Authority.pem
+etc/ssl/certs/f30dd6ad.0 -> USERTrust_ECC_Certification_Authority.pem
+etc/ssl/certs/f3377b1b.0 -> Security_Communication_Root_CA.pem
+etc/ssl/certs/f387163d.0 -> Starfield_Class_2_CA.pem
+etc/ssl/certs/f39fc864.0 -> SecureTrust_CA.pem
+etc/ssl/certs/f51bb24c.0 -> Certigna_Root_CA.pem
+etc/ssl/certs/fa5da96b.0 -> GLOBALTRUST_2020.pem
+etc/ssl/certs/fc5a8f99.0 -> USERTrust_RSA_Certification_Authority.pem
+etc/ssl/certs/fd64f3fc.0 -> TunTrust_Root_CA.pem
+etc/ssl/certs/fe8a2cd8.0 -> SZAFIR_ROOT_CA2.pem
+etc/ssl/certs/feffd413.0 -> GlobalSign_Root_E46.pem
+etc/ssl/certs/ff34af3f.0 -> TUBITAK_Kamu_SM_SSL_Kok_Sertifikasi_-_Surum_1.pem
+etc/ssl/certs/vTrus_ECC_Root_CA.pem -> /usr/share/ca-certificates/mozilla/vTrus_ECC_Root_CA.crt
+etc/ssl/certs/vTrus_Root_CA.pem -> /usr/share/ca-certificates/mozilla/vTrus_Root_CA.crt
+etc/ssl/private/
+etc/sudoers.d/
+etc/sudoers.d/README
+etc/sv/
+etc/sv/ssh/
+etc/sv/ssh/finish
+etc/sv/ssh/run
+etc/sv/ssh/.meta/
+etc/sv/ssh/.meta/installed
+etc/sv/ssh/log/
+etc/sv/ssh/log/run
+etc/sysctl.d/
+etc/sysctl.d/99-sysctl.conf -> ../sysctl.conf
+etc/sysctl.d/README.sysctl
+etc/systemd/
+etc/systemd/journald.conf
+etc/systemd/logind.conf
+etc/systemd/networkd.conf
+etc/systemd/pstore.conf
+etc/systemd/resolved.conf
+etc/systemd/sleep.conf
+etc/systemd/system.conf
+etc/systemd/timesyncd.conf
+etc/systemd/user.conf
+etc/systemd/network/
+etc/systemd/network/00-armbian.network.readme
+etc/systemd/networkd.conf.d/
+etc/systemd/networkd.conf.d/mac-duid.conf
+etc/systemd/sleep.conf.d/
+etc/systemd/sleep.conf.d/00-disable.conf
+etc/systemd/system/
+etc/systemd/system/dbus-fi.w1.wpa_supplicant1.service -> /lib/systemd/system/wpa_supplicant.service
+etc/systemd/system/dbus-org.bluez.service -> /lib/systemd/system/bluetooth.service
+etc/systemd/system/dbus-org.freedesktop.network1.service -> /lib/systemd/system/systemd-networkd.service
+etc/systemd/system/dbus-org.freedesktop.resolve1.service -> /lib/systemd/system/systemd-resolved.service
+etc/systemd/system/dbus-org.freedesktop.timesync1.service -> /lib/systemd/system/systemd-timesyncd.service
+etc/systemd/system/logrotate.service
+etc/systemd/system/sshd.service -> /lib/systemd/system/ssh.service
+etc/systemd/system/syslog.service -> /lib/systemd/system/rsyslog.service
+etc/systemd/system/systemd-firstboot.service -> /dev/null
+etc/systemd/system/basic.target.wants/
+etc/systemd/system/basic.target.wants/armbian-hardware-monitor.service -> /lib/systemd/system/armbian-hardware-monitor.service
+etc/systemd/system/basic.target.wants/armbian-hardware-optimize.service -> /lib/systemd/system/armbian-hardware-optimize.service
+etc/systemd/system/basic.target.wants/armbian-led-state.service -> /lib/systemd/system/armbian-led-state.service
+etc/systemd/system/bluetooth.target.wants/
+etc/systemd/system/bluetooth.target.wants/bluetooth.service -> /lib/systemd/system/bluetooth.service
+etc/systemd/system/getty.target.wants/
+etc/systemd/system/getty.target.wants/getty@tty1.service -> /lib/systemd/system/getty@.service
+etc/systemd/system/getty.target.wants/serial-getty@ttyS0.service -> /lib/systemd/system/serial-getty@.service
+etc/systemd/system/getty@.service.d/
+etc/systemd/system/multi-user.target.wants/
+etc/systemd/system/multi-user.target.wants/aw859a-bluetooth.service -> /lib/systemd/system/aw859a-bluetooth.service
+etc/systemd/system/multi-user.target.wants/aw859a-wifi.service -> /lib/systemd/system/aw859a-wifi.service
+etc/systemd/system/multi-user.target.wants/console-setup.service -> /lib/systemd/system/console-setup.service
+etc/systemd/system/multi-user.target.wants/cron.service -> /lib/systemd/system/cron.service
+etc/systemd/system/multi-user.target.wants/e2scrub_reap.service -> /lib/systemd/system/e2scrub_reap.service
+etc/systemd/system/multi-user.target.wants/remote-fs.target -> /lib/systemd/system/remote-fs.target
+etc/systemd/system/multi-user.target.wants/rsyslog.service -> /lib/systemd/system/rsyslog.service
+etc/systemd/system/multi-user.target.wants/ssh.service -> /lib/systemd/system/ssh.service
+etc/systemd/system/multi-user.target.wants/systemd-networkd.service -> /lib/systemd/system/systemd-networkd.service
+etc/systemd/system/multi-user.target.wants/wpa_supplicant.service -> /lib/systemd/system/wpa_supplicant.service
+etc/systemd/system/network-online.target.wants/
+etc/systemd/system/network-online.target.wants/systemd-networkd-wait-online.service -> /lib/systemd/system/systemd-networkd-wait-online.service
+etc/systemd/system/serial-getty@.service.d/
+etc/systemd/system/sockets.target.wants/
+etc/systemd/system/sockets.target.wants/systemd-networkd.socket -> /lib/systemd/system/systemd-networkd.socket
+etc/systemd/system/sysinit.target.wants/
+etc/systemd/system/sysinit.target.wants/armbian-ramlog.service -> /lib/systemd/system/armbian-ramlog.service
+etc/systemd/system/sysinit.target.wants/armbian-zram-config.service -> /lib/systemd/system/armbian-zram-config.service
+etc/systemd/system/sysinit.target.wants/fake-hwclock.service -> /lib/systemd/system/fake-hwclock.service
+etc/systemd/system/sysinit.target.wants/keyboard-setup.service -> /lib/systemd/system/keyboard-setup.service
+etc/systemd/system/sysinit.target.wants/systemd-network-generator.service -> /lib/systemd/system/systemd-network-generator.service
+etc/systemd/system/sysinit.target.wants/systemd-pstore.service -> /lib/systemd/system/systemd-pstore.service
+etc/systemd/system/sysinit.target.wants/systemd-resolved.service -> /lib/systemd/system/systemd-resolved.service
+etc/systemd/system/sysinit.target.wants/systemd-timesyncd.service -> /lib/systemd/system/systemd-timesyncd.service
+etc/systemd/system/timers.target.wants/
+etc/systemd/system/timers.target.wants/apt-daily-upgrade.timer -> /lib/systemd/system/apt-daily-upgrade.timer
+etc/systemd/system/timers.target.wants/apt-daily.timer -> /lib/systemd/system/apt-daily.timer
+etc/systemd/system/timers.target.wants/dpkg-db-backup.timer -> /lib/systemd/system/dpkg-db-backup.timer
+etc/systemd/system/timers.target.wants/e2scrub_all.timer -> /lib/systemd/system/e2scrub_all.timer
+etc/systemd/system/timers.target.wants/fstrim.timer -> /lib/systemd/system/fstrim.timer
+etc/systemd/system/timers.target.wants/logrotate.timer -> /lib/systemd/system/logrotate.timer
+etc/systemd/system/timers.target.wants/man-db.timer -> /lib/systemd/system/man-db.timer
+etc/systemd/user/
+etc/systemd/user/sockets.target.wants/
+etc/systemd/user/sockets.target.wants/dirmngr.socket -> /lib/systemd/user/dirmngr.socket
+etc/systemd/user/sockets.target.wants/gpg-agent-browser.socket -> /lib/systemd/user/gpg-agent-browser.socket
+etc/systemd/user/sockets.target.wants/gpg-agent-extra.socket -> /lib/systemd/user/gpg-agent-extra.socket
+etc/systemd/user/sockets.target.wants/gpg-agent-ssh.socket -> /lib/systemd/user/gpg-agent-ssh.socket
+etc/systemd/user/sockets.target.wants/gpg-agent.socket -> /lib/systemd/user/gpg-agent.socket
+etc/terminfo/
+etc/terminfo/README
+etc/tmpfiles.d/
+etc/udev/
+etc/udev/udev.conf
+etc/udev/hwdb.d/
+etc/udev/rules.d/
+etc/udev/rules.d/10-wifi-disable-powermanagement.rules
+etc/udev/rules.d/50-usb-realtek-net.rules
+etc/udev/rules.d/90-chromium-video.rules
+etc/ufw/
+etc/ufw/applications.d/
+etc/ufw/applications.d/openssh-server
+etc/update-motd.d/
+etc/update-motd.d/00-clear
+etc/update-motd.d/10-armbian-header
+etc/update-motd.d/15-ap-info
+etc/update-motd.d/20-ip-info
+etc/update-motd.d/25-containers-info
+etc/update-motd.d/30-armbian-sysinfo
+etc/update-motd.d/35-armbian-tips
+etc/update-motd.d/41-commands
+etc/update-motd.d/98-armbian-autoreboot-warn
+etc/update-motd.d/99-blank
+etc/update-motd.d/quotes.txt
+etc/wireguard/
+etc/wpa_supplicant/
+etc/wpa_supplicant/action_wpa.sh
+etc/wpa_supplicant/functions.sh
+etc/wpa_supplicant/ifupdown.sh
+etc/xdg/
+etc/xdg/systemd/
+etc/xdg/systemd/user -> ../../systemd/user
+home/
+home/dev12/
+home/dev12/.Xauthority
+home/dev12/.bash_aliases
+home/dev12/.bash_logout
+home/dev12/.bashrc
+home/dev12/.profile
+home/dev12/.sudo_as_admin_successful
+home/dev12/.xsessionrc
+opt/
+root/
+root/.bash_aliases
+root/.bashrc
+root/.profile
+root/.wget-hsts
+root/.ssh/
+selinux/
+srv/
+usr/
+usr/bin/
+usr/bin/[
+usr/bin/aconnect
+usr/bin/addpart
+usr/bin/alsabat
+usr/bin/alsaloop
+usr/bin/alsamixer
+usr/bin/alsatplg
+usr/bin/alsaucm
+usr/bin/amidi
+usr/bin/amixer
+usr/bin/aplay
+usr/bin/aplaymidi
+usr/bin/apropos -> whatis
+usr/bin/apt
+usr/bin/apt-cache
+usr/bin/apt-cdrom
+usr/bin/apt-config
+usr/bin/apt-extracttemplates
+usr/bin/apt-ftparchive
+usr/bin/apt-get
+usr/bin/apt-key
+usr/bin/apt-mark
+usr/bin/apt-sortpkgs
+usr/bin/arch
+usr/bin/arecord -> aplay
+usr/bin/arecordmidi
+usr/bin/armbian-config
+usr/bin/armbian-install
+usr/bin/armbian-upgrade
+usr/bin/armbianmonitor
+usr/bin/aseqdump
+usr/bin/aseqnet
+usr/bin/awk -> /etc/alternatives/awk
+usr/bin/axfer
+usr/bin/b2sum
+usr/bin/base32
+usr/bin/base64
+usr/bin/basename
+usr/bin/basenc
+usr/bin/bash
+usr/bin/bashbug
+usr/bin/bc
+usr/bin/bluemoon
+usr/bin/bluetoothctl
+usr/bin/bt-adapter
+usr/bin/bt-agent
+usr/bin/bt-device
+usr/bin/bt-network
+usr/bin/bt-obex
+usr/bin/btattach
+usr/bin/btfdiff
+usr/bin/btmgmt
+usr/bin/btmon
+usr/bin/btrfs
+usr/bin/btrfs-convert
+usr/bin/btrfs-find-root
+usr/bin/btrfs-image
+usr/bin/btrfs-map-logical
+usr/bin/btrfs-select-super
+usr/bin/btrfsck -> btrfs
+usr/bin/btrfstune
+usr/bin/busctl
+usr/bin/c_rehash
+usr/bin/captoinfo -> tic
+usr/bin/cat
+usr/bin/catman
+usr/bin/chage
+usr/bin/chattr
+usr/bin/chcon
+usr/bin/chfn
+usr/bin/chgrp
+usr/bin/chkfont
+usr/bin/chmod
+usr/bin/choom
+usr/bin/chown
+usr/bin/chrt
+usr/bin/chsh
+usr/bin/chvt
+usr/bin/ciptool
+usr/bin/ckbcomp
+usr/bin/cksum
+usr/bin/clear
+usr/bin/clear_console
+usr/bin/cmp
+usr/bin/codepage
+usr/bin/codiff
+usr/bin/col
+usr/bin/colcrt
+usr/bin/colrm
+usr/bin/column
+usr/bin/comm
+usr/bin/convert-dtsv0
+usr/bin/corelist
+usr/bin/cp
+usr/bin/cpan
+usr/bin/cpan5.36-aarch64-linux-gnu
+usr/bin/cpio
+usr/bin/crontab
+usr/bin/csplit
+usr/bin/ctracer
+usr/bin/ctstat -> lnstat
+usr/bin/curl
+usr/bin/cut
+usr/bin/cvtsudoers
+usr/bin/dash
+usr/bin/date
+usr/bin/dbus-cleanup-sockets
+usr/bin/dbus-daemon
+usr/bin/dbus-monitor
+usr/bin/dbus-run-session
+usr/bin/dbus-send
+usr/bin/dbus-update-activation-environment
+usr/bin/dbus-uuidgen
+usr/bin/dd
+usr/bin/deallocvt
+usr/bin/deb-systemd-helper
+usr/bin/deb-systemd-invoke
+usr/bin/debconf
+usr/bin/debconf-apt-progress
+usr/bin/debconf-communicate
+usr/bin/debconf-copydb
+usr/bin/debconf-escape
+usr/bin/debconf-get-selections
+usr/bin/debconf-getlang
+usr/bin/debconf-loadtemplate
+usr/bin/debconf-mergetemplate
+usr/bin/debconf-set-selections
+usr/bin/debconf-show
+usr/bin/debsums
+usr/bin/delpart
+usr/bin/df
+usr/bin/dh_bash-completion
+usr/bin/dialog
+usr/bin/diff
+usr/bin/diff3
+usr/bin/dir
+usr/bin/dircolors
+usr/bin/dirmngr
+usr/bin/dirmngr-client
+usr/bin/dirname
+usr/bin/dmesg
+usr/bin/dnsdomainname -> hostname
+usr/bin/domainname -> hostname
+usr/bin/dpkg
+usr/bin/dpkg-deb
+usr/bin/dpkg-divert
+usr/bin/dpkg-maintscript-helper
+usr/bin/dpkg-query
+usr/bin/dpkg-realpath
+usr/bin/dpkg-split
+usr/bin/dpkg-statoverride
+usr/bin/dpkg-trigger
+usr/bin/dtagnames
+usr/bin/dtc
+usr/bin/dtdiff
+usr/bin/du
+usr/bin/dumpimage
+usr/bin/dumpkeys
+usr/bin/echo
+usr/bin/editor -> /etc/alternatives/editor
+usr/bin/egrep
+usr/bin/enc2xs
+usr/bin/encguess
+usr/bin/env
+usr/bin/eqn
+usr/bin/expand
+usr/bin/expiry
+usr/bin/expr
+usr/bin/factor
+usr/bin/faillog
+usr/bin/fallocate
+usr/bin/false
+usr/bin/fdtdump
+usr/bin/fdtget
+usr/bin/fdtoverlay
+usr/bin/fdtput
+usr/bin/fgconsole
+usr/bin/fgrep
+usr/bin/figlet -> /etc/alternatives/figlet
+usr/bin/figlet-figlet
+usr/bin/figlet-toilet -> toilet
+usr/bin/figlist
+usr/bin/fincore
+usr/bin/find
+usr/bin/findmnt
+usr/bin/findrule
+usr/bin/flock
+usr/bin/fmt
+usr/bin/fold
+usr/bin/fping
+usr/bin/fping6 -> fping
+usr/bin/free
+usr/bin/fullcircle
+usr/bin/fuser
+usr/bin/gatttool
+usr/bin/geqn -> eqn
+usr/bin/getconf
+usr/bin/getent
+usr/bin/getkeycodes
+usr/bin/getopt
+usr/bin/gpasswd
+usr/bin/gpg
+usr/bin/gpg-agent
+usr/bin/gpg-connect-agent
+usr/bin/gpg-wks-server
+usr/bin/gpg-zip
+usr/bin/gpg2 -> gpg
+usr/bin/gpgcompose
+usr/bin/gpgconf
+usr/bin/gpgparsemail
+usr/bin/gpgsm
+usr/bin/gpgsplit
+usr/bin/gpgtar
+usr/bin/gpgv
+usr/bin/gpic -> pic
+usr/bin/gpiodetect
+usr/bin/gpiofind
+usr/bin/gpioget
+usr/bin/gpioinfo
+usr/bin/gpiomon
+usr/bin/gpioset
+usr/bin/grep
+usr/bin/groff
+usr/bin/grog
+usr/bin/grops
+usr/bin/grotty
+usr/bin/groups
+usr/bin/gtbl -> tbl
+usr/bin/gunzip
+usr/bin/gzexe
+usr/bin/gzip
+usr/bin/h2ph
+usr/bin/h2xs
+usr/bin/hardlink
+usr/bin/hciattach
+usr/bin/hciattach_opi
+usr/bin/hciconfig
+usr/bin/hcitool
+usr/bin/hd -> hexdump
+usr/bin/head
+usr/bin/hex2hcd
+usr/bin/hexdump
+usr/bin/hostid
+usr/bin/hostname
+usr/bin/hostnamectl
+usr/bin/htop
+usr/bin/iconv
+usr/bin/id
+usr/bin/iecset
+usr/bin/infocmp
+usr/bin/infotocap -> tic
+usr/bin/install
+usr/bin/instmodsh
+usr/bin/ionice
+usr/bin/ip
+usr/bin/ipcmk
+usr/bin/ipcrm
+usr/bin/ipcs
+usr/bin/ischroot
+usr/bin/join
+usr/bin/journalctl
+usr/bin/jq
+usr/bin/json_pp
+usr/bin/kbd_mode
+usr/bin/kbdinfo
+usr/bin/kbxutil
+usr/bin/kernel-install
+usr/bin/kill
+usr/bin/killall
+usr/bin/kmod
+usr/bin/kwboot
+usr/bin/l2ping
+usr/bin/l2test
+usr/bin/last
+usr/bin/lastb -> last
+usr/bin/lastlog
+usr/bin/lcf
+usr/bin/ld.so -> /lib/ld-linux-aarch64.so.1
+usr/bin/ldd
+usr/bin/less
+usr/bin/lessecho
+usr/bin/lessfile -> lesspipe
+usr/bin/lesskey
+usr/bin/lesspipe
+usr/bin/lexgrog
+usr/bin/libnetcfg
+usr/bin/link
+usr/bin/linux-check-removal
+usr/bin/linux-update-symlinks
+usr/bin/linux-version
+usr/bin/linux32 -> setarch
+usr/bin/linux64 -> setarch
+usr/bin/ln
+usr/bin/lnstat
+usr/bin/loadkeys
+usr/bin/loadunimap
+usr/bin/locale
+usr/bin/localectl
+usr/bin/localedef
+usr/bin/logger
+usr/bin/login
+usr/bin/loginctl
+usr/bin/logname
+usr/bin/look
+usr/bin/ls
+usr/bin/lsattr
+usr/bin/lsb_release
+usr/bin/lsblk
+usr/bin/lscpu
+usr/bin/lsfd
+usr/bin/lsinitramfs
+usr/bin/lsipc
+usr/bin/lsirq
+usr/bin/lslocks
+usr/bin/lslogins
+usr/bin/lsmem
+usr/bin/lsmod -> kmod
+usr/bin/lsns
+usr/bin/lsof
+usr/bin/lspgpot
+usr/bin/lsusb
+usr/bin/lzcat -> /etc/alternatives/lzcat
+usr/bin/lzcmp -> /etc/alternatives/lzcmp
+usr/bin/lzdiff -> /etc/alternatives/lzdiff
+usr/bin/lzegrep -> /etc/alternatives/lzegrep
+usr/bin/lzfgrep -> /etc/alternatives/lzfgrep
+usr/bin/lzgrep -> /etc/alternatives/lzgrep
+usr/bin/lzless -> /etc/alternatives/lzless
+usr/bin/lzma -> /etc/alternatives/lzma
+usr/bin/lzmainfo
+usr/bin/lzmore -> /etc/alternatives/lzmore
+usr/bin/man
+usr/bin/man-recode
+usr/bin/mandb
+usr/bin/manpath
+usr/bin/mapscrn
+usr/bin/markdown-it
+usr/bin/mawk
+usr/bin/mcookie
+usr/bin/md5sum
+usr/bin/md5sum.textutils -> md5sum
+usr/bin/mesg
+usr/bin/migrate-pubring-from-classic-gpg
+usr/bin/mk_modmap
+usr/bin/mkdir
+usr/bin/mkeficapsule
+usr/bin/mkenvimage
+usr/bin/mkfifo
+usr/bin/mkimage
+usr/bin/mknod
+usr/bin/mksunxiboot
+usr/bin/mktemp
+usr/bin/mmc
+usr/bin/more
+usr/bin/mount
+usr/bin/mountpoint
+usr/bin/mpris-proxy
+usr/bin/mt -> /etc/alternatives/mt
+usr/bin/mt-gnu
+usr/bin/mv
+usr/bin/namei
+usr/bin/nand-sata-install -> armbian-install
+usr/bin/nano
+usr/bin/nawk -> /etc/alternatives/nawk
+usr/bin/neqn
+usr/bin/networkctl
+usr/bin/newgrp
+usr/bin/nice
+usr/bin/nisdomainname -> hostname
+usr/bin/nl
+usr/bin/nohup
+usr/bin/nproc
+usr/bin/nroff
+usr/bin/nsenter
+usr/bin/nstat
+usr/bin/numfmt
+usr/bin/obexctl
+usr/bin/od
+usr/bin/openssl
+usr/bin/openvt
+usr/bin/pager -> /etc/alternatives/pager
+usr/bin/pahole
+usr/bin/partx
+usr/bin/passwd
+usr/bin/paste
+usr/bin/pathchk
+usr/bin/pdb3 -> pdb3.11
+usr/bin/pdb3.11 -> ../lib/python3.11/pdb.py
+usr/bin/pdwtags
+usr/bin/peekfd
+usr/bin/perl
+usr/bin/perl5.36-aarch64-linux-gnu
+usr/bin/perl5.36.0
+usr/bin/perlbug
+usr/bin/perldoc
+usr/bin/perlivp
+usr/bin/perlthanks
+usr/bin/pfunct
+usr/bin/pglobal
+usr/bin/pgrep
+usr/bin/pic
+usr/bin/pico -> /etc/alternatives/pico
+usr/bin/piconv
+usr/bin/pidof -> /sbin/killall5
+usr/bin/pidwait
+usr/bin/pinentry -> /etc/alternatives/pinentry
+usr/bin/pinentry-curses
+usr/bin/ping
+usr/bin/ping4 -> ping
+usr/bin/ping6 -> ping
+usr/bin/pinky
+usr/bin/pkill -> pgrep
+usr/bin/pl2pm
+usr/bin/pldd
+usr/bin/pmap
+usr/bin/pod2html
+usr/bin/pod2man
+usr/bin/pod2text
+usr/bin/pod2usage
+usr/bin/podchecker
+usr/bin/pr
+usr/bin/preconv
+usr/bin/prefcnt
+usr/bin/printenv
+usr/bin/printf
+usr/bin/prlimit
+usr/bin/prove
+usr/bin/prtstat
+usr/bin/ps
+usr/bin/psfaddtable -> psfxtable
+usr/bin/psfgettable -> psfxtable
+usr/bin/psfstriptable -> psfxtable
+usr/bin/psfxtable
+usr/bin/pslog
+usr/bin/pstree
+usr/bin/pstree.x11 -> pstree
+usr/bin/ptar
+usr/bin/ptardiff
+usr/bin/ptargrep
+usr/bin/ptx
+usr/bin/pv
+usr/bin/pwd
+usr/bin/pwdx
+usr/bin/py3clean
+usr/bin/py3compile
+usr/bin/py3versions -> ../share/python3/py3versions.py
+usr/bin/pydoc3 -> pydoc3.11
+usr/bin/pydoc3.11
+usr/bin/pygettext3 -> pygettext3.11
+usr/bin/pygettext3.11
+usr/bin/pygmentize
+usr/bin/python3 -> python3.11
+usr/bin/python3.11
+usr/bin/rbash -> bash
+usr/bin/rctest
+usr/bin/rdebsums
+usr/bin/rdma
+usr/bin/readlink
+usr/bin/realpath
+usr/bin/rename.ul
+usr/bin/renice
+usr/bin/reset -> tset
+usr/bin/resizepart
+usr/bin/resolvectl
+usr/bin/rev
+usr/bin/rfcomm
+usr/bin/rgrep
+usr/bin/rm
+usr/bin/rmdir
+usr/bin/rnano -> nano
+usr/bin/routel
+usr/bin/rrsync
+usr/bin/rsync
+usr/bin/rsync-ssl
+usr/bin/rtstat -> lnstat
+usr/bin/run-parts
+usr/bin/runcon
+usr/bin/savelog
+usr/bin/scncopy
+usr/bin/scp
+usr/bin/screendump
+usr/bin/script
+usr/bin/scriptlive
+usr/bin/scriptreplay
+usr/bin/sdiff
+usr/bin/sdptool
+usr/bin/sed
+usr/bin/select-editor
+usr/bin/sensible-browser
+usr/bin/sensible-editor
+usr/bin/sensible-pager
+usr/bin/seq
+usr/bin/setarch
+usr/bin/setfont
+usr/bin/setkeycodes
+usr/bin/setleds
+usr/bin/setlogcons
+usr/bin/setmetamode
+usr/bin/setpriv
+usr/bin/setsid
+usr/bin/setterm
+usr/bin/setupcon
+usr/bin/setvtrgb
+usr/bin/sftp
+usr/bin/sg -> newgrp
+usr/bin/sh -> dash
+usr/bin/sha1sum
+usr/bin/sha224sum
+usr/bin/sha256sum
+usr/bin/sha384sum
+usr/bin/sha512sum
+usr/bin/shasum
+usr/bin/showconsolefont
+usr/bin/showfigfonts
+usr/bin/showkey
+usr/bin/shred
+usr/bin/shuf
+usr/bin/skill
+usr/bin/slabtop
+usr/bin/sleep
+usr/bin/slogin -> ssh
+usr/bin/snice -> skill
+usr/bin/soelim
+usr/bin/sort
+usr/bin/speaker-test
+usr/bin/splain
+usr/bin/split
+usr/bin/splitfont
+usr/bin/ss
+usr/bin/ssh
+usr/bin/ssh-add
+usr/bin/ssh-agent
+usr/bin/ssh-argv0
+usr/bin/ssh-copy-id
+usr/bin/ssh-keygen
+usr/bin/ssh-keyscan
+usr/bin/stat
+usr/bin/stdbuf
+usr/bin/streamzip
+usr/bin/stty
+usr/bin/su
+usr/bin/sudo
+usr/bin/sudoedit -> sudo
+usr/bin/sudoreplay
+usr/bin/sum
+usr/bin/sync
+usr/bin/syscse
+usr/bin/systemctl
+usr/bin/systemd -> /lib/systemd/systemd
+usr/bin/systemd-analyze
+usr/bin/systemd-ask-password
+usr/bin/systemd-cat
+usr/bin/systemd-cgls
+usr/bin/systemd-cgtop
+usr/bin/systemd-creds
+usr/bin/systemd-cryptenroll
+usr/bin/systemd-delta
+usr/bin/systemd-detect-virt
+usr/bin/systemd-escape
+usr/bin/systemd-firstboot
+usr/bin/systemd-hwdb
+usr/bin/systemd-id128
+usr/bin/systemd-inhibit
+usr/bin/systemd-machine-id-setup
+usr/bin/systemd-mount
+usr/bin/systemd-notify
+usr/bin/systemd-path
+usr/bin/systemd-repart
+usr/bin/systemd-run
+usr/bin/systemd-socket-activate
+usr/bin/systemd-stdio-bridge
+usr/bin/systemd-sysext
+usr/bin/systemd-sysusers
+usr/bin/systemd-tmpfiles
+usr/bin/systemd-tty-ask-password-agent
+usr/bin/systemd-umount -> systemd-mount
+usr/bin/tabs
+usr/bin/tac
+usr/bin/tail
+usr/bin/tar
+usr/bin/taskset
+usr/bin/tbl
+usr/bin/tee
+usr/bin/tempfile
+usr/bin/test
+usr/bin/tic
+usr/bin/timedatectl
+usr/bin/timeout
+usr/bin/tload
+usr/bin/toe
+usr/bin/toilet
+usr/bin/top
+usr/bin/touch
+usr/bin/tput
+usr/bin/tr
+usr/bin/troff
+usr/bin/true
+usr/bin/truncate
+usr/bin/tset
+usr/bin/tsort
+usr/bin/tty
+usr/bin/tzselect
+usr/bin/ucf
+usr/bin/ucfq
+usr/bin/ucfr
+usr/bin/uclampset
+usr/bin/udevadm
+usr/bin/ul
+usr/bin/umount
+usr/bin/uname
+usr/bin/uncompress
+usr/bin/unexpand
+usr/bin/unicode_start
+usr/bin/unicode_stop
+usr/bin/uniq
+usr/bin/unlink
+usr/bin/unlzma -> /etc/alternatives/unlzma
+usr/bin/unmkinitramfs
+usr/bin/unshare
+usr/bin/unxz -> xz
+usr/bin/update-alternatives
+usr/bin/uptime
+usr/bin/usb-devices
+usr/bin/usbhid-dump
+usr/bin/usbreset
+usr/bin/users
+usr/bin/utmpdump
+usr/bin/vdir
+usr/bin/vmstat
+usr/bin/w
+usr/bin/wall
+usr/bin/watch
+usr/bin/watchgnupg
+usr/bin/wc
+usr/bin/wdctl
+usr/bin/wg
+usr/bin/wg-quick
+usr/bin/wget
+usr/bin/whatis
+usr/bin/whereis
+usr/bin/which -> /etc/alternatives/which
+usr/bin/which.debianutils
+usr/bin/whiptail
+usr/bin/who
+usr/bin/whoami
+usr/bin/wpa_passphrase
+usr/bin/write
+usr/bin/xargs
+usr/bin/xsubpp
+usr/bin/xz
+usr/bin/xzcat -> xz
+usr/bin/xzcmp -> xzdiff
+usr/bin/xzdiff
+usr/bin/xzegrep -> xzgrep
+usr/bin/xzfgrep -> xzgrep
+usr/bin/xzgrep
+usr/bin/xzless
+usr/bin/xzmore
+usr/bin/yes
+usr/bin/ypdomainname -> hostname
+usr/bin/zcat
+usr/bin/zcmp
+usr/bin/zdiff
+usr/bin/zdump
+usr/bin/zegrep
+usr/bin/zfgrep
+usr/bin/zforce
+usr/bin/zgrep
+usr/bin/zipdetails
+usr/bin/zless
+usr/bin/zmore
+usr/bin/znew
+usr/games/
+usr/include/
+usr/include/dialog.h
+usr/include/dlg_colors.h
+usr/include/dlg_config.h
+usr/include/dlg_keys.h
+usr/include/sudo_plugin.h
+usr/include/iproute2/
+usr/include/iproute2/bpf_elf.h
+usr/lib/
+usr/lib/klibc-1XeOf7KyqJT__7eY0aO_DLo2_0c.so
+usr/lib/ld-linux-aarch64.so.1 -> aarch64-linux-gnu/ld-linux-aarch64.so.1
+usr/lib/nand-sata-install -> armbian-install
+usr/lib/os-release
+usr/lib/sftp-server -> openssh/sftp-server
+usr/lib/NetworkManager/
+usr/lib/NetworkManager/conf.d/
+usr/lib/NetworkManager/conf.d/no-mac-addr-change.conf
+usr/lib/aarch64-linux-gnu/
+usr/lib/aarch64-linux-gnu/ld-linux-aarch64.so.1
+usr/lib/aarch64-linux-gnu/libBrokenLocale.so.1
+usr/lib/aarch64-linux-gnu/libacl.so.1 -> libacl.so.1.1.2301
+usr/lib/aarch64-linux-gnu/libacl.so.1.1.2301
+usr/lib/aarch64-linux-gnu/libanl.so.1
+usr/lib/aarch64-linux-gnu/libapparmor.so.1 -> libapparmor.so.1.8.4
+usr/lib/aarch64-linux-gnu/libapparmor.so.1.8.4
+usr/lib/aarch64-linux-gnu/libapt-pkg.so.6.0 -> libapt-pkg.so.6.0.0
+usr/lib/aarch64-linux-gnu/libapt-pkg.so.6.0.0
+usr/lib/aarch64-linux-gnu/libapt-private.so.0.0 -> libapt-private.so.0.0.0
+usr/lib/aarch64-linux-gnu/libapt-private.so.0.0.0
+usr/lib/aarch64-linux-gnu/libargon2.so.1
+usr/lib/aarch64-linux-gnu/libasound.so.2 -> libasound.so.2.0.0
+usr/lib/aarch64-linux-gnu/libasound.so.2.0.0
+usr/lib/aarch64-linux-gnu/libassuan.so.0 -> libassuan.so.0.8.5
+usr/lib/aarch64-linux-gnu/libassuan.so.0.8.5
+usr/lib/aarch64-linux-gnu/libatopology.so.2 -> libatopology.so.2.0.0
+usr/lib/aarch64-linux-gnu/libatopology.so.2.0.0
+usr/lib/aarch64-linux-gnu/libattr.so.1 -> libattr.so.1.1.2501
+usr/lib/aarch64-linux-gnu/libattr.so.1.1.2501
+usr/lib/aarch64-linux-gnu/libaudit.so.1 -> libaudit.so.1.0.0
+usr/lib/aarch64-linux-gnu/libaudit.so.1.0.0
+usr/lib/aarch64-linux-gnu/libblkid.so.1 -> libblkid.so.1.1.0
+usr/lib/aarch64-linux-gnu/libblkid.so.1.1.0
+usr/lib/aarch64-linux-gnu/libbpf.so.1 -> libbpf.so.1.1.2
+usr/lib/aarch64-linux-gnu/libbpf.so.1.1.2
+usr/lib/aarch64-linux-gnu/libbrotlicommon.so.1 -> libbrotlicommon.so.1.0.9
+usr/lib/aarch64-linux-gnu/libbrotlicommon.so.1.0.9
+usr/lib/aarch64-linux-gnu/libbrotlidec.so.1 -> libbrotlidec.so.1.0.9
+usr/lib/aarch64-linux-gnu/libbrotlidec.so.1.0.9
+usr/lib/aarch64-linux-gnu/libbrotlienc.so.1 -> libbrotlienc.so.1.0.9
+usr/lib/aarch64-linux-gnu/libbrotlienc.so.1.0.9
+usr/lib/aarch64-linux-gnu/libbsd.so.0 -> libbsd.so.0.11.7
+usr/lib/aarch64-linux-gnu/libbsd.so.0.11.7
+usr/lib/aarch64-linux-gnu/libbz2.so.1 -> libbz2.so.1.0.4
+usr/lib/aarch64-linux-gnu/libbz2.so.1.0 -> libbz2.so.1.0.4
+usr/lib/aarch64-linux-gnu/libbz2.so.1.0.4
+usr/lib/aarch64-linux-gnu/libc.so.6
+usr/lib/aarch64-linux-gnu/libc_malloc_debug.so.0
+usr/lib/aarch64-linux-gnu/libcaca++.so.0 -> libcaca++.so.0.99.20
+usr/lib/aarch64-linux-gnu/libcaca++.so.0.99.20
+usr/lib/aarch64-linux-gnu/libcaca.so.0 -> libcaca.so.0.99.20
+usr/lib/aarch64-linux-gnu/libcaca.so.0.99.20
+usr/lib/aarch64-linux-gnu/libcap-ng.so.0 -> libcap-ng.so.0.0.0
+usr/lib/aarch64-linux-gnu/libcap-ng.so.0.0.0
+usr/lib/aarch64-linux-gnu/libcap.so.2 -> libcap.so.2.66
+usr/lib/aarch64-linux-gnu/libcap.so.2.66
+usr/lib/aarch64-linux-gnu/libcbor.so.0.8 -> libcbor.so.0.8.0
+usr/lib/aarch64-linux-gnu/libcbor.so.0.8.0
+usr/lib/aarch64-linux-gnu/libcom_err.so.2 -> libcom_err.so.2.1
+usr/lib/aarch64-linux-gnu/libcom_err.so.2.1
+usr/lib/aarch64-linux-gnu/libcrypt.so.1 -> libcrypt.so.1.1.0
+usr/lib/aarch64-linux-gnu/libcrypt.so.1.1.0
+usr/lib/aarch64-linux-gnu/libcrypto.so.3
+usr/lib/aarch64-linux-gnu/libcryptsetup.so.12 -> libcryptsetup.so.12.9.0
+usr/lib/aarch64-linux-gnu/libcryptsetup.so.12.9.0
+usr/lib/aarch64-linux-gnu/libcurl.so.4 -> libcurl.so.4.8.0
+usr/lib/aarch64-linux-gnu/libcurl.so.4.8.0
+usr/lib/aarch64-linux-gnu/libdb-5.3.so
+usr/lib/aarch64-linux-gnu/libdbus-1.so.3 -> libdbus-1.so.3.32.4
+usr/lib/aarch64-linux-gnu/libdbus-1.so.3.32.4
+usr/lib/aarch64-linux-gnu/libdebconfclient.so.0 -> libdebconfclient.so.0.0.0
+usr/lib/aarch64-linux-gnu/libdebconfclient.so.0.0.0
+usr/lib/aarch64-linux-gnu/libdevmapper.so.1.02.1
+usr/lib/aarch64-linux-gnu/libdialog.a
+usr/lib/aarch64-linux-gnu/libdl.so.2
+usr/lib/aarch64-linux-gnu/libdrop_ambient.so.0 -> libdrop_ambient.so.0.0.0
+usr/lib/aarch64-linux-gnu/libdrop_ambient.so.0.0.0
+usr/lib/aarch64-linux-gnu/libdw-0.188.so
+usr/lib/aarch64-linux-gnu/libdw.so.1 -> libdw-0.188.so
+usr/lib/aarch64-linux-gnu/libe2p.so.2 -> libe2p.so.2.3
+usr/lib/aarch64-linux-gnu/libe2p.so.2.3
+usr/lib/aarch64-linux-gnu/libedit.so.2 -> libedit.so.2.0.70
+usr/lib/aarch64-linux-gnu/libedit.so.2.0.70
+usr/lib/aarch64-linux-gnu/libelf-0.188.so
+usr/lib/aarch64-linux-gnu/libelf.so.1 -> libelf-0.188.so
+usr/lib/aarch64-linux-gnu/libestr.so.0 -> libestr.so.0.0.0
+usr/lib/aarch64-linux-gnu/libestr.so.0.0.0
+usr/lib/aarch64-linux-gnu/libexpat.so.1 -> libexpat.so.1.8.10
+usr/lib/aarch64-linux-gnu/libexpat.so.1.8.10
+usr/lib/aarch64-linux-gnu/libexpatw.so.1 -> libexpatw.so.1.8.10
+usr/lib/aarch64-linux-gnu/libexpatw.so.1.8.10
+usr/lib/aarch64-linux-gnu/libext2fs.so.2 -> libext2fs.so.2.4
+usr/lib/aarch64-linux-gnu/libext2fs.so.2.4
+usr/lib/aarch64-linux-gnu/libfastjson.so.4 -> libfastjson.so.4.3.0
+usr/lib/aarch64-linux-gnu/libfastjson.so.4.3.0
+usr/lib/aarch64-linux-gnu/libfdisk.so.1 -> libfdisk.so.1.1.0
+usr/lib/aarch64-linux-gnu/libfdisk.so.1.1.0
+usr/lib/aarch64-linux-gnu/libfdt-1.6.1.so
+usr/lib/aarch64-linux-gnu/libfdt.so.1 -> libfdt-1.6.1.so
+usr/lib/aarch64-linux-gnu/libffi.so.8 -> libffi.so.8.1.2
+usr/lib/aarch64-linux-gnu/libffi.so.8.1.2
+usr/lib/aarch64-linux-gnu/libfftw3f.so.3 -> libfftw3f.so.3.6.10
+usr/lib/aarch64-linux-gnu/libfftw3f.so.3.6.10
+usr/lib/aarch64-linux-gnu/libfftw3f_omp.so.3 -> libfftw3f_omp.so.3.6.10
+usr/lib/aarch64-linux-gnu/libfftw3f_omp.so.3.6.10
+usr/lib/aarch64-linux-gnu/libfftw3f_threads.so.3 -> libfftw3f_threads.so.3.6.10
+usr/lib/aarch64-linux-gnu/libfftw3f_threads.so.3.6.10
+usr/lib/aarch64-linux-gnu/libfido2.so.1 -> libfido2.so.1.12.0
+usr/lib/aarch64-linux-gnu/libfido2.so.1.12.0
+usr/lib/aarch64-linux-gnu/libformw.so.6 -> libformw.so.6.4
+usr/lib/aarch64-linux-gnu/libformw.so.6.4
+usr/lib/aarch64-linux-gnu/libgcc_s.so.1
+usr/lib/aarch64-linux-gnu/libgcrypt.so.20 -> libgcrypt.so.20.4.1
+usr/lib/aarch64-linux-gnu/libgcrypt.so.20.4.1
+usr/lib/aarch64-linux-gnu/libgdbm.so.6 -> libgdbm.so.6.0.0
+usr/lib/aarch64-linux-gnu/libgdbm.so.6.0.0
+usr/lib/aarch64-linux-gnu/libgdbm_compat.so.4 -> libgdbm_compat.so.4.0.0
+usr/lib/aarch64-linux-gnu/libgdbm_compat.so.4.0.0
+usr/lib/aarch64-linux-gnu/libgio-2.0.so.0 -> libgio-2.0.so.0.7400.6
+usr/lib/aarch64-linux-gnu/libgio-2.0.so.0.7400.6
+usr/lib/aarch64-linux-gnu/libglib-2.0.so.0 -> libglib-2.0.so.0.7400.6
+usr/lib/aarch64-linux-gnu/libglib-2.0.so.0.7400.6
+usr/lib/aarch64-linux-gnu/libgmodule-2.0.so.0 -> libgmodule-2.0.so.0.7400.6
+usr/lib/aarch64-linux-gnu/libgmodule-2.0.so.0.7400.6
+usr/lib/aarch64-linux-gnu/libgmp.so.10 -> libgmp.so.10.4.1
+usr/lib/aarch64-linux-gnu/libgmp.so.10.4.1
+usr/lib/aarch64-linux-gnu/libgnutls.so.30 -> libgnutls.so.30.34.3
+usr/lib/aarch64-linux-gnu/libgnutls.so.30.34.3
+usr/lib/aarch64-linux-gnu/libgobject-2.0.so.0 -> libgobject-2.0.so.0.7400.6
+usr/lib/aarch64-linux-gnu/libgobject-2.0.so.0.7400.6
+usr/lib/aarch64-linux-gnu/libgomp.so.1 -> libgomp.so.1.0.0
+usr/lib/aarch64-linux-gnu/libgomp.so.1.0.0
+usr/lib/aarch64-linux-gnu/libgpg-error.so.0 -> libgpg-error.so.0.33.1
+usr/lib/aarch64-linux-gnu/libgpg-error.so.0.33.1
+usr/lib/aarch64-linux-gnu/libgpiod.so.2 -> libgpiod.so.2.2.2
+usr/lib/aarch64-linux-gnu/libgpiod.so.2.2.2
+usr/lib/aarch64-linux-gnu/libgpiodcxx.so.1 -> libgpiodcxx.so.1.1.2
+usr/lib/aarch64-linux-gnu/libgpiodcxx.so.1.1.2
+usr/lib/aarch64-linux-gnu/libgssapi_krb5.so.2 -> libgssapi_krb5.so.2.2
+usr/lib/aarch64-linux-gnu/libgssapi_krb5.so.2.2
+usr/lib/aarch64-linux-gnu/libgthread-2.0.so.0 -> libgthread-2.0.so.0.7400.6
+usr/lib/aarch64-linux-gnu/libgthread-2.0.so.0.7400.6
+usr/lib/aarch64-linux-gnu/libhistory.so.8 -> libhistory.so.8.2
+usr/lib/aarch64-linux-gnu/libhistory.so.8.2
+usr/lib/aarch64-linux-gnu/libhogweed.so.6 -> libhogweed.so.6.6
+usr/lib/aarch64-linux-gnu/libhogweed.so.6.6
+usr/lib/aarch64-linux-gnu/libidn2.so.0 -> libidn2.so.0.3.8
+usr/lib/aarch64-linux-gnu/libidn2.so.0.3.8
+usr/lib/aarch64-linux-gnu/libiniparser.so.1
+usr/lib/aarch64-linux-gnu/libip4tc.so.2 -> libip4tc.so.2.0.0
+usr/lib/aarch64-linux-gnu/libip4tc.so.2.0.0
+usr/lib/aarch64-linux-gnu/libjq.so.1 -> libjq.so.1.0.4
+usr/lib/aarch64-linux-gnu/libjq.so.1.0.4
+usr/lib/aarch64-linux-gnu/libjson-c.so.5 -> libjson-c.so.5.2.0
+usr/lib/aarch64-linux-gnu/libjson-c.so.5.2.0
+usr/lib/aarch64-linux-gnu/libk5crypto.so.3 -> libk5crypto.so.3.1
+usr/lib/aarch64-linux-gnu/libk5crypto.so.3.1
+usr/lib/aarch64-linux-gnu/libkeyutils.so.1 -> libkeyutils.so.1.10
+usr/lib/aarch64-linux-gnu/libkeyutils.so.1.10
+usr/lib/aarch64-linux-gnu/libkmod.so.2 -> libkmod.so.2.4.0
+usr/lib/aarch64-linux-gnu/libkmod.so.2.4.0
+usr/lib/aarch64-linux-gnu/libkrb5.so.3 -> libkrb5.so.3.3
+usr/lib/aarch64-linux-gnu/libkrb5.so.3.3
+usr/lib/aarch64-linux-gnu/libkrb5support.so.0 -> libkrb5support.so.0.1
+usr/lib/aarch64-linux-gnu/libkrb5support.so.0.1
+usr/lib/aarch64-linux-gnu/libksba.so.8 -> libksba.so.8.14.3
+usr/lib/aarch64-linux-gnu/libksba.so.8.14.3
+usr/lib/aarch64-linux-gnu/liblber-2.5.so.0 -> liblber-2.5.so.0.1.8
+usr/lib/aarch64-linux-gnu/liblber-2.5.so.0.1.8
+usr/lib/aarch64-linux-gnu/libldap-2.5.so.0 -> libldap-2.5.so.0.1.8
+usr/lib/aarch64-linux-gnu/libldap-2.5.so.0.1.8
+usr/lib/aarch64-linux-gnu/liblognorm.so.5 -> liblognorm.so.5.1.0
+usr/lib/aarch64-linux-gnu/liblognorm.so.5.1.0
+usr/lib/aarch64-linux-gnu/liblz4.so.1 -> liblz4.so.1.9.4
+usr/lib/aarch64-linux-gnu/liblz4.so.1.9.4
+usr/lib/aarch64-linux-gnu/liblzma.so.5 -> liblzma.so.5.4.1
+usr/lib/aarch64-linux-gnu/liblzma.so.5.4.1
+usr/lib/aarch64-linux-gnu/liblzo2.so.2 -> liblzo2.so.2.0.0
+usr/lib/aarch64-linux-gnu/liblzo2.so.2.0.0
+usr/lib/aarch64-linux-gnu/libm.so.6
+usr/lib/aarch64-linux-gnu/libmd.so.0 -> libmd.so.0.0.5
+usr/lib/aarch64-linux-gnu/libmd.so.0.0.5
+usr/lib/aarch64-linux-gnu/libmemusage.so
+usr/lib/aarch64-linux-gnu/libmenuw.so.6 -> libmenuw.so.6.4
+usr/lib/aarch64-linux-gnu/libmenuw.so.6.4
+usr/lib/aarch64-linux-gnu/libmnl.so.0 -> libmnl.so.0.2.0
+usr/lib/aarch64-linux-gnu/libmnl.so.0.2.0
+usr/lib/aarch64-linux-gnu/libmount.so.1 -> libmount.so.1.1.0
+usr/lib/aarch64-linux-gnu/libmount.so.1.1.0
+usr/lib/aarch64-linux-gnu/libncursesw.so.6 -> libncursesw.so.6.4
+usr/lib/aarch64-linux-gnu/libncursesw.so.6.4
+usr/lib/aarch64-linux-gnu/libnetplan.so.0.0
+usr/lib/aarch64-linux-gnu/libnettle.so.8 -> libnettle.so.8.6
+usr/lib/aarch64-linux-gnu/libnettle.so.8.6
+usr/lib/aarch64-linux-gnu/libnewt.so.0.52 -> libnewt.so.0.52.23
+usr/lib/aarch64-linux-gnu/libnewt.so.0.52.23
+usr/lib/aarch64-linux-gnu/libnghttp2.so.14 -> libnghttp2.so.14.24.1
+usr/lib/aarch64-linux-gnu/libnghttp2.so.14.24.1
+usr/lib/aarch64-linux-gnu/libnl-3.so.200 -> libnl-3.so.200.26.0
+usr/lib/aarch64-linux-gnu/libnl-3.so.200.26.0
+usr/lib/aarch64-linux-gnu/libnl-genl-3.so.200 -> libnl-genl-3.so.200.26.0
+usr/lib/aarch64-linux-gnu/libnl-genl-3.so.200.26.0
+usr/lib/aarch64-linux-gnu/libnl-route-3.so.200 -> libnl-route-3.so.200.26.0
+usr/lib/aarch64-linux-gnu/libnl-route-3.so.200.26.0
+usr/lib/aarch64-linux-gnu/libnpth.so.0 -> libnpth.so.0.1.2
+usr/lib/aarch64-linux-gnu/libnpth.so.0.1.2
+usr/lib/aarch64-linux-gnu/libnsl.so.1
+usr/lib/aarch64-linux-gnu/libnsl.so.2 -> libnsl.so.2.0.1
+usr/lib/aarch64-linux-gnu/libnsl.so.2.0.1
+usr/lib/aarch64-linux-gnu/libnss_compat.so.2
+usr/lib/aarch64-linux-gnu/libnss_dns.so.2
+usr/lib/aarch64-linux-gnu/libnss_files.so.2
+usr/lib/aarch64-linux-gnu/libnss_hesiod.so.2
+usr/lib/aarch64-linux-gnu/libonig.so.5 -> libonig.so.5.3.0
+usr/lib/aarch64-linux-gnu/libonig.so.5.3.0
+usr/lib/aarch64-linux-gnu/libp11-kit.so.0 -> libp11-kit.so.0.3.0
+usr/lib/aarch64-linux-gnu/libp11-kit.so.0.3.0
+usr/lib/aarch64-linux-gnu/libpam.so.0 -> libpam.so.0.85.1
+usr/lib/aarch64-linux-gnu/libpam.so.0.85.1
+usr/lib/aarch64-linux-gnu/libpam_misc.so.0 -> libpam_misc.so.0.82.1
+usr/lib/aarch64-linux-gnu/libpam_misc.so.0.82.1
+usr/lib/aarch64-linux-gnu/libpamc.so.0 -> libpamc.so.0.82.1
+usr/lib/aarch64-linux-gnu/libpamc.so.0.82.1
+usr/lib/aarch64-linux-gnu/libpanelw.so.6 -> libpanelw.so.6.4
+usr/lib/aarch64-linux-gnu/libpanelw.so.6.4
+usr/lib/aarch64-linux-gnu/libparted.so.2 -> libparted.so.2.0.4
+usr/lib/aarch64-linux-gnu/libparted.so.2.0.4
+usr/lib/aarch64-linux-gnu/libpcprofile.so
+usr/lib/aarch64-linux-gnu/libpcre2-8.so.0 -> libpcre2-8.so.0.11.2
+usr/lib/aarch64-linux-gnu/libpcre2-8.so.0.11.2
+usr/lib/aarch64-linux-gnu/libpcsclite.so.1 -> libpcsclite.so.1.0.0
+usr/lib/aarch64-linux-gnu/libpcsclite.so.1.0.0
+usr/lib/aarch64-linux-gnu/libperl.so.5.36 -> libperl.so.5.36.0
+usr/lib/aarch64-linux-gnu/libperl.so.5.36.0
+usr/lib/aarch64-linux-gnu/libpipeline.so.1 -> libpipeline.so.1.5.7
+usr/lib/aarch64-linux-gnu/libpipeline.so.1.5.7
+usr/lib/aarch64-linux-gnu/libpopt.so.0 -> libpopt.so.0.0.2
+usr/lib/aarch64-linux-gnu/libpopt.so.0.0.2
+usr/lib/aarch64-linux-gnu/libproc2.so.0 -> libproc2.so.0.0.1
+usr/lib/aarch64-linux-gnu/libproc2.so.0.0.1
+usr/lib/aarch64-linux-gnu/libpsl.so.5 -> libpsl.so.5.3.4
+usr/lib/aarch64-linux-gnu/libpsl.so.5.3.4
+usr/lib/aarch64-linux-gnu/libpsx.so.2 -> libpsx.so.2.66
+usr/lib/aarch64-linux-gnu/libpsx.so.2.66
+usr/lib/aarch64-linux-gnu/libpthread.so.0
+usr/lib/aarch64-linux-gnu/libreadline.so.8 -> libreadline.so.8.2
+usr/lib/aarch64-linux-gnu/libreadline.so.8.2
+usr/lib/aarch64-linux-gnu/libresolv.so.2
+usr/lib/aarch64-linux-gnu/librt.so.1
+usr/lib/aarch64-linux-gnu/librtmp.so.1
+usr/lib/aarch64-linux-gnu/libsamplerate.so.0 -> libsamplerate.so.0.2.2
+usr/lib/aarch64-linux-gnu/libsamplerate.so.0.2.2
+usr/lib/aarch64-linux-gnu/libsasl2.so.2 -> libsasl2.so.2.0.25
+usr/lib/aarch64-linux-gnu/libsasl2.so.2.0.25
+usr/lib/aarch64-linux-gnu/libseccomp.so.2 -> libseccomp.so.2.5.4
+usr/lib/aarch64-linux-gnu/libseccomp.so.2.5.4
+usr/lib/aarch64-linux-gnu/libselinux.so.1
+usr/lib/aarch64-linux-gnu/libsemanage.so.2
+usr/lib/aarch64-linux-gnu/libsepol.so.2
+usr/lib/aarch64-linux-gnu/libslang.so.2 -> libslang.so.2.3.3
+usr/lib/aarch64-linux-gnu/libslang.so.2.3.3
+
+
