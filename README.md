@@ -76,6 +76,17 @@ Tras realizar auditorías físicas y pruebas de estrés controladas, se descubri
 *   **Imagen Anterior (MATE Desktop / Kernel 6.6.44):** [Armbian Unofficial MATE Desktop 24.11.0](https://github.com/sicXnull/armbian-build/releases/download/v24.8.0-trunk.425/Armbian-unofficial_24.11.0-trunk_X96q_bookworm_current_6.6.44_mate_desktop.img.xz)
 *   **Imagen Nueva (Minimal CLI / Kernel 6.12.64):** [Armbian Unofficial Minimal CLI 26.02.0](https://github.com/sicXnull/armbian-build/releases/download/v24.8.0-trunk.425/Armbian-unofficial_26.02.0-trunk_X96q-v1-3_bookworm_current_6.12.64_minimal.img.xz)
 
+### Desafío 7: La RAM Falsa (Fake RAM) y la Solución Definitiva de Flasheo por Red
+*   **Síntoma:** El sistema seguía congelándose misteriosamente al copiar o subir archivos grandes por red (como SCP) o al intentar descomprimir la imagen localmente, incluso con baja temperatura y CPU descansada. En `htop`, el consumo se reportaba en apenas 119 MB de procesos, pero la barra visual de memoria (Caché de Páginas) se llenaba a más del 50%, provocando un Kernel Panic inmediato (`Internal error: Oops - Undefined instruction` en `swapper/0`).
+*   **Diagnóstico:** 
+    1. **RAM Falseada:** La TV Box está configurada por firmware para reportar virtualmente 1.44 GB al Kernel, pero físicamente cuenta con un chip de apenas **1 GB** (o 768 MB). Al intentar pasar el umbral físico de ~600 MB (incluyendo la caché de escritura de Linux o *Page Cache*), el kernel intenta escribir o escanear direcciones físicas inexistentes, lo que corrompe su propio código cargado en memoria y cuelga el SoC.
+    2. **Fatiga de la eMMC Worn-Out:** La memoria eMMC tiene entre el 70% y 80% de su vida útil consumida. Escribir de forma continua a alta velocidad genera demandas de corriente tan altas en sus bombas de carga internas que provoca caídas de tensión (sags eléctricos) en los reguladores de la placa.
+*   **Solución Definitiva:**
+    1. **Pre-descompresión en PC Host:** Descomprimimos la imagen `.img.xz` en la PC de desarrollo antes de enviarla, eliminando el uso de CPU y buffers pesados de descompresión LZMA en la TV Box.
+    2. **Streaming Directo con `oflag=direct`:** Transmitimos la imagen cruda mediante SSH y la volcamos directamente en la eMMC (`/dev/mmcblk2`) usando `dd` con la bandera `oflag=direct`. Esto desactiva el Page Cache de Linux, manteniendo el uso de memoria RAM estrictamente plano en **119 MB** (0% de caché) de inicio a fin.
+    3. **Dosificación en Ráfagas Cortas (`sleep` regulado):** Programamos el script de streaming en el Host para enviar bloques de **256 KB** con una pausa de **80 ms** entre bloques (velocidad promedio de ~1.8 MB/s), dando al regulador de la placa el 98% de tiempo en reposo para estabilizar su tensión y temperatura.
+    4. **Post-Configuración de UUIDs:** Una vez finalizada la transmisión sin un solo cuelgue, el script realiza de forma automatizada un `tune2fs` para generar un UUID aleatorio para la eMMC y actualiza de forma síncrona los archivos `/etc/fstab` y `/boot/armbianEnv.txt` en la partición montada.
+
 ---
 
 ## 5. Repositorios Consultados y Créditos

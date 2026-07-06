@@ -21,13 +21,15 @@ def run_ssh(cmd):
         print(child.before.decode('utf-8', errors='ignore') if child.before else "")
         return
         
+    # Enable real-time log streaming
+    child.logfile = sys.stdout.buffer
+    
     # Send our command
     child.sendline(cmd)
     
     # Send exit to close the shell
     child.sendline("exit")
-    child.expect(pexpect.EOF)
-    print(child.before.decode('utf-8', errors='ignore'))
+    child.expect(pexpect.EOF, timeout=600)
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
