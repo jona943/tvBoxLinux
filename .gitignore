@@ -2,3 +2,4 @@ ai-memory/
 .env
 .tmp/
 downloads/
+.session_notes.md
